@@ -18,3 +18,9 @@ The following tools are used for this purpose:
 ## Files and directories
 
 - [**manuscript.md**](manuscript.md) the manuscript file
+
+
+## TODO items
+
+- Choose pixel size for fitting better
+- Square FFT over whol;e image
