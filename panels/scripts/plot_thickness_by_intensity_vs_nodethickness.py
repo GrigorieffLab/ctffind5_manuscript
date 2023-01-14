@@ -4,6 +4,8 @@ import latexipy as lp
 import json
 from pathlib import Path
 import scienceplots
+from sklearn.linear_model import RANSACRegressor
+from sklearn.preprocessing import StandardScaler
 
 plt.style.use(['science','scatter','ieee'])
 import utils
@@ -32,13 +34,40 @@ with lp.figure(f"thickness_by_node_vs_by_lamber_beer",tight_layout=False):
         x = data_euc[:,1]/10
         y = data_euc[:,0]
 
-        sc = plt.scatter(x,y,s=1)
-        x = x[:,np.newaxis]
-        a, _, _, _ = np.linalg.lstsq(x, y)
-        x = np.linspace(0,300,10)
-        plt.plot(x,x*a, 'r--' )
+
+
+        
+        # standardize    
+        x_scaler, y_scaler = StandardScaler(), StandardScaler()
+        x_train = x_scaler.fit_transform(x[..., None])
+        y_train = y_scaler.fit_transform(y[..., None])
+        # fit model
+        model = RANSACRegressor(random_state=5)
+        model.fit(x_train, y_train.ravel())
+        inlier_mask = model.inlier_mask_
+        outlier_mask = np.logical_not(inlier_mask)
+        print(np.sum(inlier_mask))
+        print(np.sum(outlier_mask))
+        plt.scatter(x[inlier_mask],y[inlier_mask],s=1,alpha=1,marker='.',color='k')
+        plt.scatter(x[outlier_mask],y[outlier_mask],s=1,alpha=0.5,color='orange',marker='+')
+        # do some predictions
+        test_x = np.array([0, 300])
+        predictions = y_scaler.inverse_transform(
+            model.predict(x_scaler.transform(test_x[..., None]))[...,None]
+        )
+        intercept = y_scaler.inverse_transform(
+            model.predict(x_scaler.transform(np.array([0])[..., None]))[...,None]
+        )
+        slope = y_scaler.inverse_transform(
+            model.predict(x_scaler.transform(np.array([1])[..., None]))[...,None]
+        ) - y_scaler.inverse_transform(
+            model.predict(x_scaler.transform(np.array([0])[..., None]))[...,None]
+        )
+        print(f"Intercept: {intercept}")
+        print(f"Slope: {slope}")
+        plt.plot(test_x,predictions, 'r--' )
         # Write extinction coefficeint on plot
-        plt.text(0.05, 0.95, f"$\kappa = {1/a[0]:.2f}$", transform=plt.gca().transAxes, fontsize=9)
+        plt.text(0.03, 0.93, f"$\kappa = {1/slope[0][0]:.2f}$", transform=plt.gca().transAxes, fontsize=9)
         plt.xlabel("Thickness by Node [nm]")
         plt.ylabel(r"$\displaystyle-\ln\frac{I}{I_0}$")
 
