@@ -1,0 +1,16 @@
+name: ctffind5_manuscript
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pandoc
+  - tectonic
+  - numpy
+  - pandas
+  - matplotlib
+  - jupyter
+  - cairosvg
+  - pip
+  - pip:
+    - SciencePlots
+
