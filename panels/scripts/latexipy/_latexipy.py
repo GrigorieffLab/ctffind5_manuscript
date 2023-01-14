@@ -291,7 +291,7 @@ def save_figure(filename, directory, exts, mkdir=True,
 
 
 @contextmanager
-def figure(filename, *, directory='img', exts=['pdf','png'], size=None,
+def figure(filename, *, directory=None, exts=['pdf','png'], size=None,
            mkdir=True,tight_layout=True):
     '''
     The primary interface for creating figures.
@@ -338,10 +338,13 @@ def figure(filename, *, directory='img', exts=['pdf','png'], size=None,
     '''
     if size is None:
         size = figure_size()
+    if directory is None:
+        # Set directory relative to location of this file
+        directory = Path(__file__).parent.parent.parent / 'images'
     logger.info(f'{filename}:')
     logger.info('  Plotting...')
     yield
-    plt.gcf().set_size_inches(*size)
+    #plt.gcf().set_size_inches(*size)
     save_figure(filename=filename, directory=directory, exts=exts, mkdir=mkdir,
                 from_context_manager=True,tight_layout=tight_layout)
     plt.close()
