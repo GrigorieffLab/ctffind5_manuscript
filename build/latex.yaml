@@ -1,0 +1,7 @@
+# Pandoc --defaults for LaTeX output.
+# Load on top of common defaults.
+to: pdf
+pdf-engine: tectonic
+output-file: output/manuscript.pdf
+template: build/default.latex
+include-in-header: build/manuscript.sty

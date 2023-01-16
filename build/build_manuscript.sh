@@ -13,4 +13,4 @@
 
 # Usage: ./build/build_manuscript.sh
 
-pandoc manuscript.md -o output/manuscript.pdf --pdf-engine=tectonic
+pandoc manuscript.md --defaults=build/latex.yaml
