@@ -12,3 +12,9 @@ para = programs.apply_ctf.parameters_from_database(
 para.phase_flip_only = True
 
 programs.apply_ctf.run(para)
+
+para.phase_flip_only = False
+para.apply_wiener_filter = True
+para.output_filename = str(Path(__file__).parent.parent / "data/mmm/mmm_wiener.mrc")
+
+programs.apply_ctf.run(para)
