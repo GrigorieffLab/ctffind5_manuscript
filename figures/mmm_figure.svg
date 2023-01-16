@@ -9,11 +9,12 @@
    id="svg162"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    sodipodi:docname="mmm_figure.svg"
+   xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
      id="namedview164"
      pagecolor="#ffffff"
      bordercolor="#000000"
@@ -24,34 +25,61 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="in"
      showgrid="false"
-     inkscape:zoom="0.73673541"
-     inkscape:cx="340.69219"
-     inkscape:cy="164.23807"
+     inkscape:zoom="1.4790474"
+     inkscape:cx="340.75988"
+     inkscape:cy="250.83713"
      inkscape:window-width="1920"
      inkscape:window-height="1007"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     showguides="true">
-    <sodipodi:guide
+     showguides="true"><sodipodi:guide
        position="34.968587,70.257222"
        orientation="1,0"
        id="guide1823"
-       inkscape:locked="false" />
-    <sodipodi:guide
+       inkscape:locked="false" /><sodipodi:guide
        position="-10.6169,25.837271"
        orientation="0,-1"
        id="guide1825"
-       inkscape:locked="false" />
-  </sodipodi:namedview>
-  <defs
-     id="defs159" />
-  <g
+       inkscape:locked="false" /></sodipodi:namedview><defs
+     id="defs159" /><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <text
+     id="layer1"><image
+       width="35"
+       height="19.802885"
+       preserveAspectRatio="none"
+       xlink:href="../panels/images/mmm_ctffind.png"
+       id="image3737"
+       x="35"
+       y="2.4615698" /><image
+       width="33.805691"
+       height="25.417812"
+       preserveAspectRatio="none"
+       xlink:href="../panels/images/mmm_phaseflip.png"
+       id="image1449"
+       x="-3.5527137e-15"
+       y="26.668404" /><image
+       width="33.805691"
+       height="25.417814"
+       preserveAspectRatio="none"
+       xlink:href="../panels/images/mmm.png"
+       id="image252"
+       x="-3.5527137e-15"
+       y="-4.4408921e-16" /><rect
+       style="fill:#ffffff;stroke-width:0.0700508;fill-opacity:0.72477823"
+       id="rect476"
+       width="2"
+       height="3.2970784"
+       x="-3.5527141e-15"
+       y="-4.4408926e-16" /><rect
+       style="fill:#ffffff;fill-opacity:0.724778;stroke-width:0.0700508"
+       id="rect476-3"
+       width="2"
+       height="3.2970784"
+       x="0.010742913"
+       y="26.498611" /><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167"
        x="0.25076032"
@@ -61,8 +89,7 @@
          id="tspan389"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167"
          x="0.25076032"
-         y="2.4384689">A</tspan></text>
-    <text
+         y="2.4384689">A</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167"
        x="35.271919"
@@ -71,24 +98,21 @@
          sodipodi:role="line"
          id="tspan1827"
          x="35.271919"
-         y="2.4384689">B</tspan></text>
-    <text
+         y="2.4384689">B</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="0.25076032"
        y="28.898329"
        id="text391-5"><tspan
          sodipodi:role="line"
-         id="tspan1882">C</tspan></text>
-    <text
+         id="tspan1882">C</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167"
        x="35.271919"
        y="28.898329"
        id="text391-6-5"><tspan
          sodipodi:role="line"
-         id="tspan1884">D</tspan></text>
-    <text
+         id="tspan1884">D</tspan></text><text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.22222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#080808;fill-opacity:1;stroke:none;stroke-width:0.104167"
        x="16.90296"
@@ -98,6 +122,4 @@
          id="tspan1938"
          style="stroke-width:0.104167"
          x="16.90296"
-         y="12.914475" /></text>
-  </g>
-</svg>
+         y="12.914475" /></text></g></svg>

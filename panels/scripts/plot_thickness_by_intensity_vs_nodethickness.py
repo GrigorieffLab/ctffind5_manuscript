@@ -49,7 +49,7 @@ with lp.figure(f"thickness_by_node_vs_by_lamber_beer",tight_layout=False):
         print(np.sum(inlier_mask))
         print(np.sum(outlier_mask))
         plt.scatter(x[inlier_mask],y[inlier_mask],s=1,alpha=1,marker='.',color='k')
-        plt.scatter(x[outlier_mask],y[outlier_mask],s=1,alpha=0.5,color='orange',marker='+')
+        plt.scatter(x[outlier_mask],y[outlier_mask],s=1,alpha=0.5,color='k',marker='.')
         # do some predictions
         test_x = np.array([0, 300])
         predictions = y_scaler.inverse_transform(
