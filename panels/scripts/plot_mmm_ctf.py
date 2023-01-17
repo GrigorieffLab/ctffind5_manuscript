@@ -30,7 +30,6 @@ with open(Path(__file__).parent.parent.parent / "data/mmm/mmm/Assets/CTF/mmm_CTF
 spatial_freq = 1/spatial_freq
 
 info = database.get_image_info_from_db(Path(__file__).parent.parent.parent / "data/mmm/mmm/mmm.db",1)
-print(info)
 
 with lp.figure(f"mmm_ctffind",tight_layout=False):
     plt.plot(spatial_freq, epa, label="EPA")
