@@ -2,7 +2,7 @@ name: ctffind5_manuscript
 channels:
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.10
   - pandoc
   - tectonic
   - numpy
@@ -16,5 +16,5 @@ dependencies:
   - pip:
     - SciencePlots
     - mrcfile
-    - pycistem
+    - ../misc/pycistem-0.1.5-cp310-cp310-manylinux_2_31_x86_64.whl
 
