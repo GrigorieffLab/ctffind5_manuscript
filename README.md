@@ -59,5 +59,9 @@ The following tools are used for this purpose:
 
 ## TODO items
 
-- Choose pixel size for fitting better
-- Square FFT over whol;e image
+- [x] Choose pixel size for fitting better
+- [ ] Find datasets for tomo vs thickness verification
+
+## Dataset for tomo thickness verification
+
+
