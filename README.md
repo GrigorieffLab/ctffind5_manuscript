@@ -61,7 +61,15 @@ The following tools are used for this purpose:
 
 - [x] Choose pixel size for fitting better
 - [ ] Find datasets for tomo vs thickness verification
+- [ ] Fix OverlayCTF
+- [ ] Just change FRC threshold?
+- [ ] Find out why it fails for certain images atm
+- [ ] Options for 
+    - [ ] McMullan vs CTFFIND style model
+    - [ ] Reduce weight of node area in fitting
 
 ## Dataset for tomo thickness verification
+
+- Johanes_20210614/undiff_red1
 
 
