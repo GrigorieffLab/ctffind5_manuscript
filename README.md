@@ -72,4 +72,16 @@ The following tools are used for this purpose:
 
 - Johanes_20210614/undiff_red1
 
+## Figures
+
+#### Figure 1: How does tilt estimation work?
+
+#### Figure 2: How does thickness estimation work?
+
+#### Figure 3: CTF correction of low magnification maps
+
+#### Figure 4: Verification and error estimate of tilt 
+
+#### Figure 5: Verification and error estimate of thickness 
+
 
