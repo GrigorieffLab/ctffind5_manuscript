@@ -64,13 +64,29 @@ The following tools are used for this purpose:
 - [ ] Fix OverlayCTF
 - [ ] Just change FRC threshold?
 - [ ] Find out why it fails for certain images atm
-- [ ] Options for 
-    - [ ] McMullan vs CTFFIND style model
-    - [ ] Reduce weight of node area in fitting
+- [x] Options for 
+    - [x] McMullan vs CTFFIND style model
+    - [x] Reduce weight of node area in fitting
 
 ## Dataset for tomo thickness verification
 
-- Johanes_20210614/undiff_red1
+### Tomos
+```
+Pixel Size 4.1746
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/st011.mrc
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/st003.mrc
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/st008.mrc
+Pixel Size 2.0873
+/data/elferich/CryoTEM/Johanes_20210614/144diff_NP2/s003.mrc
+/data/elferich/CryoTEM/Johanes_20210614/144diff_NP1/s001.mrc
+/data/elferich/CryoTEM/Johanes_20210614/120diff_Y12/s003.mrc
+/data/elferich/CryoTEM/Johanes_20210614/120diff_Y12/s006.mrc
+```
+
+### Exposures
+```
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/frames/stack_record_40_00000_-0.0.tif
+```
 
 ## Figures
 
