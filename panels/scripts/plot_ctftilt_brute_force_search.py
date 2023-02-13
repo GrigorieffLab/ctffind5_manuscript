@@ -11,23 +11,23 @@ import latexipy as lp
 
 plt.style.use(['science','scatter','ieee'])
 
-dataset=Path(__file__).parent.parent.parent / "data/tilt_brute_force/s_tiltseries04_00023_13.0_Oct28_14.05.56_24_0_CTF_1_debug__tilt.json"
-
+#dataset=Path(__file__).parent.parent.parent / "data/tilt_brute_force/s_tiltseries04_00023_13.0_Oct28_14.05.56_24_0_CTF_1_debug__tilt.json"
+dataset="/scratch/bern/elferich/ER_HoxB8_96h/Assets/CTF/CF4-g1_00002_-20.0_3_0_CTF_3_debug__tilt.json"
 
 
 with open(dataset) as f:
     data = json.load(f)
-tilt = float(str(dataset).split('_')[-10])
+#tilt = float(str(dataset).split('_')[-10])
 with lp.figure(f"ctftilt_bruteforce",tight_layout=False):
 
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     axis, angle, score =  zip(*data["tilt_axis_and_angle_search"])
-    score = np.array(score).reshape(13, 36)
-    axis = np.array(axis).reshape(13, 36)
-    angle = np.array(angle).reshape(13, 36)
+    score = np.array(score).reshape(17, 36)[:13,:]
+    axis = np.array(axis).reshape(17, 36)[:13,:]
+    angle = np.array(angle).reshape(17, 36)[:13,:]
 
     # Plot "initial_fit" in ax1
-    norm = plt.Normalize(score.min(), score.max())
+    norm = plt.Normalize(0.09, score.max())
     colors = cm.viridis(norm(score)*0.9)
     rcount, ccount, _ = colors.shape
     surf = ax.plot_surface(axis, angle, score, rcount=rcount, ccount=ccount,
