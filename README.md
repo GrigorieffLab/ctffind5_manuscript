@@ -85,7 +85,9 @@ Pixel Size 2.0873
 
 ### Exposures
 ```
-/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/frames/stack_record_40_00000_-0.0.tif
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/frames/stack_record_40_00000_-0.0.tif -> 2843A
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/frames/stack_record_25_00000_-0.0.tif -> 1002A
+/data/elferich/CryoTEM/Johannes_20210412/0401_grid10/frames/stack_record_32_00000_-0.0.tif -> 2215A
 ```
 
 ## Figures
