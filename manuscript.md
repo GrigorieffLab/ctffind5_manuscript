@@ -13,6 +13,7 @@ Images taken by transmission electron microscopes (TEM) are distorted by the sph
 
 ## Introduction
 
+Transmission electron microscopy of biological spcimens at cryogenic temperatures (cryo-EM) is a powerful tool to image biomolecules at high resolution, both in solution and within the cell. Interpretation of cryo-EM images depends on understanding the 
 ## Methods
 
 ### Tilt estimation by CTF
