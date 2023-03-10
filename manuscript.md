@@ -27,6 +27,30 @@ Images taken by transmission electron microscopes (TEM) are distorted by the sph
 
 ### Sample Thickness estimation by CTF
 
+After correction for the incoherence of the CTF due to sample tilt we set out to
+also account for the sample thickness. As evident in Figure [] there are
+thon-ring like modulation in the powerspectrum at higher resolution than the
+goodness of fit estimate. These modulations are as described by [] and []
+phase-shifted to the normal CTF. [] suggested that the goodness of fit estimate
+could be used as an estimation of the location of the first node and the sample
+estimated according to equation []. We implemented this in CTFFIND5 and found
+that indeed when we replaced the CTFFIND4 model function with the function
+described by [] and used the goodness of fit estimate as the location of the
+first node the resulting model CTF had a better agreement with the experimental
+powespectrum (Figure). We then implemented a procedure to refine the CTF
+parameters together with the sample thickness and found that this procedure
+improved the agreement between the model and experimental CTF even further, even
+though the adjustemnt to the parameters was rather small. 
+
+While using the goodness of fit resolution estimation was good enough for many
+images, we also found that in images with defocus under 1 um and with a sample
+wthickness over 200 nm the goodness CTFFIND would fit the CTF before and after
+the first node using the old model function. FIgure [] shows an example of such
+a case. The reader might appreciate that at lowe resolution (>7A) The
+experimental peaks are at lower resolution than in the model CTF while at
+resolution abover 7A the experimental peaks are at higher resolution than in the
+model CTF. That th
+
 ### Verification using tomography
 
 ### Verification using Lamber-Beer laws on DeCo-LACE data
