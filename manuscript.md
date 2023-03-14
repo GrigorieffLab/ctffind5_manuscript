@@ -34,7 +34,7 @@ the formula described by [@pmid:26103047]
 
 $$
 CTF_{t}(\lambda,\textbf{g},\Delta f,C_{s},\Delta\varphi, \omega_{2},t) = \frac{1}{2}(1-{\rm sinc}(\xi(\lambda,\textbf{g},t))\cos(2\chi(\lambda,|\textbf{g}|,\Delta f,C_{s},\Delta\varphi,\omega_{2})))
-$$
+$$ {#eq:ctft}
 
 where $\chi$ denotes the phase-shift as a function of the electron wavelength
 $\lambda$, the spatial frequency vector $|\textbf{g}|$, the objective defocus
@@ -45,7 +45,7 @@ $\xi$:
 
 $$
 \xi(\lambda,\textbf{g},t) = \pi\lambda\textbf{g}^{2}t
-$$
+$$ {#eq:xi}
 
 If the user request sample thickness estimation, the program will first fit the
 $CTF$ model function as implemented in CTFFIND 4 and the "goodness of fit"
@@ -54,16 +54,24 @@ $CTF_{t}$ function, with $t$ given by:
 
 $$
 t = /frac{1}{\lambda\textbf{g}^{2}}
-$$
+$$ {#eq:t}
 
+If the option "Brute-force 1D fit" is selected, CTFFIND5 will further refine $t$ and $\Delta f$ by calculating the normalized cross-correlation between the radial average of the powerspectrum (corrected for astigmatism, as described in ) and $CTF_t$, searching systematically for the best combination of $t$ in the range of 50-400 nm at 10 nm steps and $\Delta f$ in 10 nm steps from the previously fitted value +- 200 nm. 
 
+Finally, if the option "2D-refinement" is selected CTFFIND5 will optimize $t$, $\Delta f_{1}$, $\Delta f_{2}$, and $\omega$ using teh conjugate gradient algorithm descibed in and the normalized cross correlation between $CTF_{t}$ and the 2D powespectrum as a scoring function.
+
+After the optimal values for $t$ and $\Delta f$ have been obtained the "goodness of fit" crosscorrelation is recalculated using $CTF_{t}$, with the a frequency window that is 1.5 time larger, to avoid the drop-off in the node regions of $CTF_{t}$.
 
 
 ### Verification of sample thickness estimation using Lambert-Beers law
 
+We used 1000 micrographs collected on one lamella of ER-HoxB8 cells (dataset Lamella$_EUC1$ from [@doi:]). For each micrograph we calculated $ln(\frac{I}{I_0})$, where $I$ was the sum of all pixels in the center quadrant of the micrograph and $I_0$ was the average of this sum for 45 micrographs collected over vacuum, with the same energy filter settings. We then used CTFFIND5 to estimate the thickness $t$ of each micrograph using the "Brute-force 1D fit" and "2D-refinement" setting. We used a "RANSAC" algorithm as implemented in [@doi] to fit a linear model to the relationship of $ln(\frac{I}{I_0})$ and $t$, while rejecting outliers. We then manually inspected every outlier of the model fit and categorized the reason for the discrepance into "wrong fitting", "ice contamination", "partial vacuum".
+
 ### Verification of sample thickness estimation using tomography
 
 ### CTF correction of medium magnification lamella images
+
+The CTF of the representative mmm image was estimated using CTFFIND4 using the parameters: ...,...,.... We then used the program apply_ctf fo the cisTEM suite to flip the phases according to the ctf fit. We furthermore implemented the Wiener like filter described in [@doi:] in apply_ctf to produce the image shown in ... . The parameters for the Wiener like filter were chosen manually as ... to produce the subjectively most natural looking image.
 
 
 
@@ -85,7 +93,7 @@ estimated according to equation []. We implemented this in CTFFIND5 and found
 that indeed when we replaced the CTFFIND4 model function with the function
 described by [] and used the goodness of fit estimate as the location of the
 first node the resulting model CTF had a better agreement with the experimental
-powespectrum (Figure). We then implemented a procedure to refine the CTF
+powerspectrum (Figure). We then implemented a procedure to refine the CTF
 parameters together with the sample thickness and found that this procedure
 improved the agreement between the model and experimental CTF even further, even
 though the adjustemnt to the parameters was rather small. 
