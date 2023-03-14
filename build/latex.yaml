@@ -2,6 +2,12 @@
 # Load on top of common defaults.
 to: pdf
 pdf-engine: tectonic
+filters:
+- pandoc-fignos
+- pandoc-eqnos
+- pandoc-tablenos
+- pandoc-manubot-cite
+- citeproc
 output-file: output/manuscript.pdf
 template: build/default.latex
 include-in-header: build/manuscript.sty

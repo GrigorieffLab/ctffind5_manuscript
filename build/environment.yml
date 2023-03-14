@@ -16,5 +16,9 @@ dependencies:
   - pip:
     - SciencePlots
     - mrcfile
+    - pandoc-fignos
+    - pandoc-eqnos
+    - pandoc-tablenos
+    - manubot
     - ../misc/pycistem-0.1.5-cp310-cp310-manylinux_2_31_x86_64.whl
 

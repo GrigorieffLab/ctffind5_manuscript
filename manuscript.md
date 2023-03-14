@@ -13,12 +13,59 @@ Images taken by transmission electron microscopes (TEM) are distorted by the sph
 
 ## Introduction
 
-Transmission electron microscopy of biological spcimens at cryogenic temperatures (cryo-EM) is a powerful tool to image biomolecules at high resolution, both in solution and within the cell. Interpretation of cryo-EM images depends on understanding the 
+Transmission electron microscopy of biological spcimens at cryogenic
+temperatures (cryo-EM) is a powerful tool to image biomolecules at high
+resolution, both in solution and within the cell. Interpretation of cryo-EM
+images depends on understanding the 
+
 ## Methods
 
-### Tilt estimation by CTF
+### Tilt estimation algorithm
 
-### Sample Thickness estimation by CTF
+### Verification of tilt estimation using tilt-series
+
+### Verification of tilt estimation using tilted samples of aquaporin crystals
+
+### Sample thickness estimation algorithm
+
+In CTFFIND5 we implemented a new $CTF_{t}$ model function, based on the $CTF$
+function implemented in CTFFIND4 [@doi:10.1016/j.jsb.2015.08.008] adjusted by
+the formula described by [@pmid:26103047]
+
+$$
+CTF_{t}(\lambda,\textbf{g},\Delta f,C_{s},\Delta\varphi, \omega_{2},t) = \frac{1}{2}(1-{\rm sinc}(\xi(\lambda,\textbf{g},t))\cos(2\chi(\lambda,|\textbf{g}|,\Delta f,C_{s},\Delta\varphi,\omega_{2})))
+$$
+
+where $\chi$ denotes the phase-shift as a function of the electron wavelength
+$\lambda$, the spatial frequency vector $|\textbf{g}|$, the objective defocus
+$\Delta f$, the spherical aberration $C_{s}$, the additional phase shift
+$\Delta\varphi$, and the fraction of amplitude contrast $\omega_{2}$. The
+modulation of the CTF due to sample thickness $t$ is described by the function
+$\xi$:
+
+$$
+\xi(\lambda,\textbf{g},t) = \pi\lambda\textbf{g}^{2}t
+$$
+
+If the user request sample thickness estimation, the program will first fit the
+$CTF$ model function as implemented in CTFFIND 4 and the "goodness of fit"
+resolution  will be used as an estimate of the location of the first node of the
+$CTF_{t}$ function, with $t$ given by:
+
+$$
+t = /frac{1}{\lambda\textbf{g}^{2}}
+$$
+
+
+
+
+### Verification of sample thickness estimation using Lambert-Beers law
+
+### Verification of sample thickness estimation using tomography
+
+### CTF correction of medium magnification lamella images
+
+
 
 ## Results
 
@@ -60,8 +107,8 @@ model CTF. That th
 
 ## Figures
 
-![Tilt estimation (A) Variance score as a function of tilt axis orientation and sample tilt](figures/tilt_figure.png)
+![Tilt estimation (A) Variance score as a function of tilt axis orientation and sample tilt](figures/tilt_figure.png){#fig:tilt}
 
-![CTF correction of medium magnification overviews](figures/mmm_figure.png)
+![CTF correction of medium magnification overviews](figures/mmm_figure.png){#fig:mmm}
 
-![Validation of sample thickness estimation](figures/node_figure.png)
+![Validation of sample thickness estimation](figures/node_figure.png){#fig:node}
