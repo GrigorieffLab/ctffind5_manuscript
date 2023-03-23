@@ -65,7 +65,30 @@ After the optimal values for $t$ and $\Delta f$ have been obtained the "goodness
 
 ### Verification of sample thickness estimation using Lambert-Beers law
 
-We used 1000 micrographs collected on one lamella of ER-HoxB8 cells (dataset Lamella$_EUC1$ from [@doi:]). For each micrograph we calculated $ln(\frac{I}{I_0})$, where $I$ was the sum of all pixels in the center quadrant of the micrograph and $I_0$ was the average of this sum for 45 micrographs collected over vacuum, with the same energy filter settings. We then used CTFFIND5 to estimate the thickness $t$ of each micrograph using the "Brute-force 1D fit" and "2D-refinement" setting. We used a "RANSAC" algorithm as implemented in [@doi] to fit a linear model to the relationship of $ln(\frac{I}{I_0})$ and $t$, while rejecting outliers. We then manually inspected every outlier of the model fit and categorized the reason for the discrepance into "wrong fitting", "ice contamination", "partial vacuum".
+We used 655  micrographs collected on one lamella of ER-HoxB8 cells (dataset
+Lamella$_EUC1$ from [@doi:]). For each micrograph we calculated
+$ln(\frac{I}{I_0})$, where $I$ was the sum of all pixels in the illuminated
+area of the movie and $I_0$ was the average of this sum for 45 micrographs collected
+over vacuum, with the same energy filter settings. This value should have a
+linear relationship to the thickness of the sample, consistent with Lambert-Berrs
+law [@doi:10.1016/j.jsb.2015.09.019;@doi:10.1016/j.jsb.2018.06.007]:
+
+$$
+ln(\frac{I}{I_0}) = \frac{1}{\kappa} t
+$$ {#eq:lb}
+
+where $\kappa$ is the apparent mean free path for inelastic scattering.
+
+We then used CTFFIND5 to
+estimate the thickness $t$ of each micrograph using the "Brute-force 1D fit" and
+"2D-refinement" setting (Min. Resolution 30A, Max. Resolution 5A, Low Defocus
+for search 500nm, High Defocus 5000nm, Min. Resolution for thickness estimate
+10A, Max. Resolution for thickness estimate 3A). 
+We used a "RANSAC" algorithm as implemented in [@doi]
+to fit a linear model to the relationship of $ln(\frac{I}{I_0})$ and $t$, while
+rejecting outliers. We then manually inspected every outlier of the model fit
+and categorized the reason for the discrepance into "wrong fitting",
+"contamination", "partially occluded beam", and "partially vacuum".
 
 ### Verification of sample thickness estimation using tomography
 
@@ -109,7 +132,33 @@ model CTF. That th
 
 ### Verification using tomography
 
+We a dataset of 7 exposures collected on lamellae of ER-HoxB8 cells together
+with tilt-series sollected afterwards in the same location to verify the
+accuracy of the thickness estimate in CTFFIND5. We used CTFFIND5 to estimate $t$
+for every exposures and compared it with the thickness estimated from tomograms
+reconstructed from the tilt-series. We mesures the thickness in the tomograms by
+manually estimating the distance between the surfaces of the lamella in X
+different spots. 
+
 ### Verification using Lamber-Beer laws on DeCo-LACE data
+
+Cryo-EM is frequently performed using an energy filter to remove inelastically
+scatteres electrons. The fraction of inelatically scattered electrons can be
+described by the Lambert-Beer law, which states that the fraction of extingished
+electrons is proportional to the thickness of the sample. The extinction
+coefficent has been experimentally determined for common cryo-EM condistions
+[@doi:]. To test whether thickness estimation in CTFFIND5 is consistent with
+this methods we used a dataset of 655 exposures of a lamella of ER-HoxB8 cells
+collected using the DeCo-LACE approach [@doi:]. We used CTFFIND5 to estimate the
+thickness $t$ of every exposures and plotted $-ln(\frac{I}{I_0})$ against $t$.
+Fitting the data to a linear model we found that that 568 out of 655 exposures
+could be well explained by a linear relationship where $\kappa$ was 323 nm. This
+value is consistent the value found by [@doi:10.1016/j.jsb.2018.06.007], even
+though our dataset was collected without an objective aperture. The X-intercept 
+of the linear model was -12.2 nm, meaning that the node position systemnatically
+predicts a smaller thickness than the extintion of electrons. Possible
+explanations are discussed below. The standard deviation of the residuals was
+5.7 nm.
 
 ## Discussion
 
