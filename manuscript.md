@@ -140,6 +140,22 @@ reconstructed from the tilt-series. We mesures the thickness in the tomograms by
 manually estimating the distance between the surfaces of the lamella in X
 different spots. 
 
+For tomography reconstruction, tilt movie frames were aligned using SerialEM
+plugin, then, tilt series were aligned using IMOD (version 4.11 ) software
+package. For coarse alignment, a high-frequency cutoff radius of 0.15 was used.
+The fiducial model was generated using patch tracking with patches of 450x450
+and a fractional overlap of patches of 0.33x0.33. High-tilt frames were omitted
+while generating the fiducial model. Robust fitting with a tuning factor of 1
+was used for fine alignment. After computing the alignment, the fiducial model
+was edited and re-computed. The edited models with the lowest residual error
+mean and sd were used for fine alignment. Tomogram positioning was used to
+correct the tilt angle offset. Full-aligned stacks were generated with a binning
+of 2 or 4 (tomogram pixel size of 8.349). Tomograms were reconstructed using a
+SIRT-like filtering option in IMOD and manually inspected. The tomograms were
+back-projected along the Y axis using a homemade script, generating a small set
+of XZ stacks. Thickness measurements on the projected central slides were
+performed using tdisp (display tool included in cisTEM software package).
+
 ### Verification using Lamber-Beer laws on DeCo-LACE data
 
 Cryo-EM is frequently performed using an energy filter to remove inelastically
