@@ -23,7 +23,11 @@ images depends on understanding the
 ### Tilt estimation algorithm
 
 ### Verification of tilt estimation using tilt-series
-
+During the milling process and the sample loading to the microscope, the real orientation of the lamella sample can be slightly off the milling angles set by users and the direction of the TEM tilting axis. Thus, the quality of the CTF correction simply based on the microscope’s axis and tilt settings can be less satisfactory. Furthermore, this error can influence the tomography alignment. 
+In ctffind5, we extended the implementation of the tilt estimate to cryo-EM lamella samples. On one hand, our algorithm enabled the direct measurements of the tilt angle and axis direction for a single tilt image. On the other hand, the real lamella orientation can be further calculated by combining the axis and tilt angles from ctffind5 and the microscope tilt settings. Considering that the results obtained by ctffind5 represent the real tilts of the sample, if we use a rotation matrix R0 to represent the real lamella loading orientation and a rotation matrix Rtem to represent the tilt and axis information of the microscope, the ctffind5 rotation matrix can be expressed as follows:  
+Rctf = R0 X Rtem
+where R0 is a fixed term. We encode the tilt angle and axis to a rotation matrix by embedding the tilt angle  and axis  to a ‘zxz’ rotation system in a sequence of ‘(,,-)’. 
+By fitting the above equation to the ctffind5 result, the lamella loading orientation R0 can be obtained. 
 ### Verification of tilt estimation using tilted samples of aquaporin crystals
 
 ### Sample thickness estimation algorithm
@@ -103,6 +107,9 @@ The CTF of the representative mmm image was estimated using CTFFIND4 using the p
 ### CTF estimation and correction assists biological interpretation of intermediate-magnification lamella images
 
 ### Tilt estimation by CTF
+Fig 1. Presents the fitted result and the orientation measurement obtained by CTFFIND5. The sample in Fig 1(a) is milled by 20 and the TEM axis direction is 178.4.  The fitting result (𝜃, 𝜑) is (19.5, 171.9). If we remove the outliers based on the 3 sigma criteria, the fitting result can be updated to (20.5, 172.9). As we can see from the result, the fitted milling angle only has 0.5 difference. However, the axis direction has up to a 6 difference, which means that the loaded grid is not well aligned to the orientation of the tilting axis of the microscope. The sample in Fig1(b) is milled by 20 and the TEM axis direction is 176.3. The fitting result is (22.1, 172.6). By removing the outliers, the fitting result is (22.6, 174.31). Although CTFFIND5 has some noticeable errors at the lower tilt angles, the fitting result is still within a reasonable range. More examples are provided in the supplementary material. 
+
+![Comparison o ctffind5 result and the crystal information](figures/Table.png){#fig:tilt}
 
 ### Sample Thickness estimation by CTF
 
