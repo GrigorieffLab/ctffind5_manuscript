@@ -26,8 +26,12 @@ images depends on understanding the
 During the milling process and the sample loading to the microscope, the real orientation of the lamella sample can be slightly off the milling angles set by users and the direction of the TEM tilting axis. Thus, the quality of the CTF correction simply based on the microscope’s axis and tilt settings can be less satisfactory. Furthermore, this error can influence the tomography alignment. 
 In ctffind5, we extended the implementation of the tilt estimate to cryo-EM lamella samples. On one hand, our algorithm enabled the direct measurements of the tilt angle and axis direction for a single tilt image. On the other hand, the real lamella orientation can be further calculated by combining the axis and tilt angles from ctffind5 and the microscope tilt settings. Considering that the results obtained by ctffind5 represent the real tilts of the sample, if we use a rotation matrix R0 to represent the real lamella loading orientation and a rotation matrix Rtem to represent the tilt and axis information of the microscope, the ctffind5 rotation matrix can be expressed as follows:  
 Rctf = R0 X Rtem.
-where R0 is a fixed term. We encode the tilt angle and axis to a rotation matrix by embedding the tilt angle $\theta and axis $\phi to a ‘zxz’ rotation system in a sequence of ‘($\phi,$\theta,-$\phi)’. 
+where R0 is a fixed term. We encode the tilt angle and axis to a rotation matrix by embedding the tilt angle $\theta$ and axis $\phi$ to a ‘zxz’ rotation system in a sequence of ‘($\phi$,$\theta$,-$\phi$)’. 
 By fitting the above equation to the ctffind5 result, the lamella loading orientation R0 can be obtained. 
+
+
+
+
 ### Verification of tilt estimation using tilted samples of aquaporin crystals
 
 ### Sample thickness estimation algorithm
@@ -107,9 +111,72 @@ The CTF of the representative mmm image was estimated using CTFFIND4 using the p
 ### CTF estimation and correction assists biological interpretation of intermediate-magnification lamella images
 
 ### Tilt estimation by CTF
-Fig 1. Presents the fitted result and the orientation measurement obtained by CTFFIND5. The sample in Fig 1(a) is milled by 20$^{\circ}$ and the TEM axis direction is 178.4$^{\circ}$.  The fitting result $(\theta, \phi)$ is $(19.5^\{circ}, 171.9$^{\circ})$. If we remove the outliers based on the 3 sigma criteria, the fitting result can be updated to (20.5, 172.9). As we can see from the result, the fitted milling angle only has 0.5$^{\circ}$ difference. However, the axis direction has up to a 6$^{\circ}$ difference, which means that the loaded grid is not well aligned to the orientation of the tilting axis of the microscope. The sample in Fig1(b) is milled by 20$^{\circ}$ and the TEM axis direction is 176.3$^{\circ}$. The fitting result is (22.1$^{\circ}$, 172.6$^{\circ}$). By removing the outliers, the fitting result is (22.6$^{\circ}$, 174.31$^{\circ}$). Although CTFFIND5 has some noticeable errors at the lower tilt angles, the fitting result is still within a reasonable range. More examples are provided in the supplementary material. 
+Fig 1. Presents the fitted result and the orientation measurement obtained by CTFFIND5. The sample in Fig 1(a) is milled by 20$^{\circ}$ and the TEM axis direction is 178.4$^{\circ}$.  The fitting result $(\theta, \phi)$ is (19.5$^{\circ}$, 171.9$^{\circ}$). If we remove the outliers based on the 3 sigma criteria, the fitting result can be updated to (20.5, 172.9). As we can see from the result, the fitted milling angle only has 0.5$^{\circ}$ difference. However, the axis direction has up to a 6$^{\circ}$ difference, which means that the loaded grid is not well aligned to the orientation of the tilting axis of the microscope. The sample in Fig1(b) is milled by 20$^{\circ}$ and the TEM axis direction is 176.3$^{\circ}$. The fitting result is (22.1$^{\circ}$, 172.6$^{\circ}$). By removing the outliers, the fitting result is (22.6$^{\circ}$, 174.31$^{\circ}$). Although CTFFIND5 has some noticeable errors at the lower tilt angles, the fitting result is still within a reasonable range. More examples are provided in the supplementary material. 
 
-![Comparison o ctffind5 result and the crystal information](figures/Table.png){#fig:tilt}
+![Comparison of ctffind5 result and the crystal information](figures/Table.png){#fig:tilt}
+\begin{table}[]
+\centering
+\caption{Comparison of CTFFIND5 Result and the Crystal Information}
+\label{tab:my-table}
+\begin{tabular}{|c|ccc|ccc|}
+\hline
+Image  & \multicolumn{3}{c|}{Tilt axis $\phi$}                                   & \multicolumn{3}{c|}{Tilt angle $\theta$}                                    \\ \cline{2-7} 
+       & \multicolumn{1}{c|}{crys.}  & \multicolumn{1}{c|}{ctffind5} & $\Delta\phi$   & \multicolumn{1}{c|}{crys}   & \multicolumn{1}{c|}{ctffind5} & $\Delta\theta$     \\ \hline
+530394 & \multicolumn{1}{c|}{93.28}  & \multicolumn{1}{c|}{94.98}    & -1.7  & \multicolumn{1}{c|}{19.6}   & \multicolumn{1}{c|}{20.69}    & -1.09   \\ \hline
+530419 & \multicolumn{1}{c|}{109.78} & \multicolumn{1}{c|}{106.51}   & 3.27  & \multicolumn{1}{c|}{18.66}  & \multicolumn{1}{c|}{16.04}    & 2.62    \\ \hline
+530430 & \multicolumn{1}{c|}{104.38} & \multicolumn{1}{c|}{101.13}   & 3.25  & \multicolumn{1}{c|}{-21.32} & \multicolumn{1}{c|}{20.37}    & -41.69  \\ \hline
+530444 & \multicolumn{1}{c|}{98.39}  & \multicolumn{1}{c|}{97.62}    & 0.77  & \multicolumn{1}{c|}{20.72}  & \multicolumn{1}{c|}{20.88}    & -0.16   \\ \hline
+660027 & \multicolumn{1}{c|}{99.68}  & \multicolumn{1}{c|}{102.34}   & -2.66 & \multicolumn{1}{c|}{19.4}   & \multicolumn{1}{c|}{22.39}    & -2.99   \\ \hline
+540149 & \multicolumn{1}{c|}{94.45}  & \multicolumn{1}{c|}{85.84}    & 8.61  & \multicolumn{1}{c|}{43.08}  & \multicolumn{1}{c|}{44.59}    & -1.51   \\ \hline
+540291 & \multicolumn{1}{c|}{96.16}  & \multicolumn{1}{c|}{98.1}     & -1.94 & \multicolumn{1}{c|}{45.11}  & \multicolumn{1}{c|}{40.68}    & 4.43    \\ \hline
+540302 & \multicolumn{1}{c|}{93.98}  & \multicolumn{1}{c|}{93.39}    & 0.59  & \multicolumn{1}{c|}{44.7}   & \multicolumn{1}{c|}{44.21}    & 0.49    \\ \hline
+540313 & \multicolumn{1}{c|}{95.34}  & \multicolumn{1}{c|}{95.13}    & 0.21  & \multicolumn{1}{c|}{44.03}  & \multicolumn{1}{c|}{46.49}    & -2.46   \\ \hline
+660183 & \multicolumn{1}{c|}{97.69}  & \multicolumn{1}{c|}{97.27}    & 0.42  & \multicolumn{1}{c|}{48.13}  & \multicolumn{1}{c|}{48.99}    & -0.86   \\ \hline
+550069 & \multicolumn{1}{c|}{90.08}  & \multicolumn{1}{c|}{92.55}    & -2.47 & \multicolumn{1}{c|}{60.46}  & \multicolumn{1}{c|}{60.83}    & -0.37   \\ \hline
+550089 & \multicolumn{1}{c|}{91.48}  & \multicolumn{1}{c|}{92.04}    & -0.56 & \multicolumn{1}{c|}{60.5}   & \multicolumn{1}{c|}{60.72}    & -0.22   \\ \hline
+660291 & \multicolumn{1}{c|}{93.23}  & \multicolumn{1}{c|}{92.19}    & 1.04  & \multicolumn{1}{c|}{-57.59} & \multicolumn{1}{c|}{59.19}    & -116.78 \\ \hline
+660421 & \multicolumn{1}{c|}{89.32}  & \multicolumn{1}{c|}{89.06}    & 0.26  & \multicolumn{1}{c|}{61.36}  & \multicolumn{1}{c|}{60.01}    & 1.35    \\ \hline
+680341 & \multicolumn{1}{c|}{89.67}  & \multicolumn{1}{c|}{90.02}    & -0.35 & \multicolumn{1}{c|}{58.68}  & \multicolumn{1}{c|}{59.62}    & -0.94   \\ \hline
+530345 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{108.6}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.84}     & -0.84   \\ \hline
+530356 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{231.17}   &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.93}     & -1.93   \\ \hline
+530358 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{56.58}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.29}     & -1.29   \\ \hline
+530375 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{3.21}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.79}     & -0.79   \\ \hline
+530378 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{67.6}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{2.17}     & -2.17   \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Comparison of CTFFIND5 Result and the Crystal Information}
+\label{tab:my-table}
+\begin{tabular}{c{0.2\textwidth}|*{3}p{0.2\textwidth}|*{3}p{0.2\textwidth}}
+\hline
+Image  & \multicolumn{3}{c|}{Tilt axis $\phi$}                                   & \multicolumn{3}{c|}{Tilt angle $\theta$}                                    \\ \cline{2-7} 
+       & \multicolumn{1}{c|}{crys.}  & \multicolumn{1}{c|}{ctffind5} & $\Delta\phi$   & \multicolumn{1}{c|}{crys}   & \multicolumn{1}{c|}{ctffind5} & $\Delta\theta$     \\ \hline
+530394 & \multicolumn{1}{c|}{93.28}  & \multicolumn{1}{c|}{94.98}    & -1.7  & \multicolumn{1}{c|}{19.6}   & \multicolumn{1}{c|}{20.69}    & -1.09   \\ \hline
+530419 & \multicolumn{1}{c|}{109.78} & \multicolumn{1}{c|}{106.51}   & 3.27  & \multicolumn{1}{c|}{18.66}  & \multicolumn{1}{c|}{16.04}    & 2.62    \\ \hline
+530430 & \multicolumn{1}{c|}{104.38} & \multicolumn{1}{c|}{101.13}   & 3.25  & \multicolumn{1}{c|}{-21.32} & \multicolumn{1}{c|}{20.37}    & -41.69  \\ \hline
+530444 & \multicolumn{1}{c|}{98.39}  & \multicolumn{1}{c|}{97.62}    & 0.77  & \multicolumn{1}{c|}{20.72}  & \multicolumn{1}{c|}{20.88}    & -0.16   \\ \hline
+660027 & \multicolumn{1}{c|}{99.68}  & \multicolumn{1}{c|}{102.34}   & -2.66 & \multicolumn{1}{c|}{19.4}   & \multicolumn{1}{c|}{22.39}    & -2.99   \\ \hline
+540149 & \multicolumn{1}{c|}{94.45}  & \multicolumn{1}{c|}{85.84}    & 8.61  & \multicolumn{1}{c|}{43.08}  & \multicolumn{1}{c|}{44.59}    & -1.51   \\ \hline
+540291 & \multicolumn{1}{c|}{96.16}  & \multicolumn{1}{c|}{98.1}     & -1.94 & \multicolumn{1}{c|}{45.11}  & \multicolumn{1}{c|}{40.68}    & 4.43    \\ \hline
+540302 & \multicolumn{1}{c|}{93.98}  & \multicolumn{1}{c|}{93.39}    & 0.59  & \multicolumn{1}{c|}{44.7}   & \multicolumn{1}{c|}{44.21}    & 0.49    \\ \hline
+540313 & \multicolumn{1}{c|}{95.34}  & \multicolumn{1}{c|}{95.13}    & 0.21  & \multicolumn{1}{c|}{44.03}  & \multicolumn{1}{c|}{46.49}    & -2.46   \\ \hline
+660183 & \multicolumn{1}{c|}{97.69}  & \multicolumn{1}{c|}{97.27}    & 0.42  & \multicolumn{1}{c|}{48.13}  & \multicolumn{1}{c|}{48.99}    & -0.86   \\ \hline
+550069 & \multicolumn{1}{c|}{90.08}  & \multicolumn{1}{c|}{92.55}    & -2.47 & \multicolumn{1}{c|}{60.46}  & \multicolumn{1}{c|}{60.83}    & -0.37   \\ \hline
+550089 & \multicolumn{1}{c|}{91.48}  & \multicolumn{1}{c|}{92.04}    & -0.56 & \multicolumn{1}{c|}{60.5}   & \multicolumn{1}{c|}{60.72}    & -0.22   \\ \hline
+660291 & \multicolumn{1}{c|}{93.23}  & \multicolumn{1}{c|}{92.19}    & 1.04  & \multicolumn{1}{c|}{-57.59} & \multicolumn{1}{c|}{59.19}    & -116.78 \\ \hline
+660421 & \multicolumn{1}{c|}{89.32}  & \multicolumn{1}{c|}{89.06}    & 0.26  & \multicolumn{1}{c|}{61.36}  & \multicolumn{1}{c|}{60.01}    & 1.35    \\ \hline
+680341 & \multicolumn{1}{c|}{89.67}  & \multicolumn{1}{c|}{90.02}    & -0.35 & \multicolumn{1}{c|}{58.68}  & \multicolumn{1}{c|}{59.62}    & -0.94   \\ \hline
+530345 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{108.6}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.84}     & -0.84   \\ \hline
+530356 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{231.17}   &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.93}     & -1.93   \\ \hline
+530358 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{56.58}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.29}     & -1.29   \\ \hline
+530375 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{3.21}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.79}     & -0.79   \\ \hline
+530378 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{67.6}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{2.17}     & -2.17   \\ \hline
+\end{tabular}
+\end{table}
+
+
 
 ### Sample Thickness estimation by CTF
 
