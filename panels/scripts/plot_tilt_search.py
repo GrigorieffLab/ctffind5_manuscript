@@ -2,15 +2,17 @@ import json
 import numpy as np
 import latexipy as lp
 from pathlib import Path
-import scienceplots
+# import scienceplots
 import matplotlib.pyplot as plt
 import mrcfile
 
-plt.style.use(['science','scatter','ieee'])
+# plt.style.use(['science','scatter','ieee'])
 
 
-json_file = "/scratch/bern/elferich/ER_HoxB8_96h/Assets/CTF/CF4-g1_00002_-20.0_3_0_CTF_3_debug__tilt.json"
-image_file = "/scratch/bern/elferich/ER_HoxB8_96h/Assets/Images/CF4-g1_00002_-20.0_3_0.mrc"
+# json_file = "/scratch/bern/elferich/ER_HoxB8_96h/Assets/CTF/CF4-g1_00002_-20.0_3_0_CTF_3_debug__tilt.json"
+# image_file = "/scratch/bern/elferich/ER_HoxB8_96h/Assets/Images/CF4-g1_00002_-20.0_3_0.mrc"
+json_file = "/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo03_ctffind5/Assets/CTF/image_022_CTF_4_debug__tilt.json"
+image_file = "/data/lingli/CTFTiltFit/rawdata/unstacked_tomo03/image_022_forplot.mrc"
 
 
 
@@ -20,9 +22,8 @@ image_file = "/scratch/bern/elferich/ER_HoxB8_96h/Assets/Images/CF4-g1_00002_-20
 
 mrc = mrcfile.open(image_file)
 
-
-im = mrc.data[0].copy()
-
+# im = mrc.data[0].copy()
+im=mrc.data.copy()
 
 #im = downscale_image(im_data, 0.25)
 
@@ -37,7 +38,8 @@ im *= 255
 #
 # Get the tile data
 #
-tilt_binning_factor = 9.433963 /  2.83
+# tilt_binning_factor = 9.433963 /  2.83
+tilt_binning_factor = 1.197719
 with open(json_file) as f:
     data = json.load(f)
 with lp.figure(f"tilt_search",tight_layout=False):
@@ -64,3 +66,4 @@ with lp.figure(f"tilt_search",tight_layout=False):
         plt.xlim(-1000, im.shape[1]+1000)
         plt.ylim( im.shape[0]+1000, -1000)
         plt.axis('off')
+        
