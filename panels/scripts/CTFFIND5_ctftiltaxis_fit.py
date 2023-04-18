@@ -151,25 +151,25 @@ def error_plot(error_series, threshold, index, zero_rot,filename):
 
 # %% data loading and parameter initialization========================================================================
 # # # lamella grid 1 tilt04 dataset--------------
-# # filepath='../unstacked_tilt04/'
-# filepath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/'
-# outpath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/fit_1/'
-# rawtltfile='/data/lingli/Lingli_20221028/grid1/tilt04.tlt'
-# ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle_1') # it stores the [index AxisDirection TiltAngle]
-# # rotation_angle_imod=86.3
-# rotation_angle_imod=88.4
-# fib_tilt=20
-# # print(ctffind5_info)
+# filepath='../unstacked_tilt04/'
+filepath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/'
+outpath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/fit_1/'
+rawtltfile='/data/lingli/Lingli_20221028/grid1/tilt04.tlt'
+ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle_1') # it stores the [index AxisDirection TiltAngle]
+# rotation_angle_imod=86.3
+rotation_angle_imod=88.4
+fib_tilt=20
+# print(ctffind5_info)
 
 # # ctffind5 paper tomo03----------------
-filepath='/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo02_ctffind5/'
-outpath='/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo02_ctffind5/'
-rawtltfile='/data/lingli/CTFTiltFit/rawdata/tomo02.tlt'
-rotation_angle_imod=86.3
-# rotation_angle_imod=88.4
-fib_tilt=-20
-ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle') # it stores the [index AxisDirection TiltAngle]
-# # ###--------------------------------------
+# filepath='/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo02_ctffind5/'
+# outpath='/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo02_ctffind5/'
+# rawtltfile='/data/lingli/CTFTiltFit/rawdata/tomo02.tlt'
+# rotation_angle_imod=86.3
+# # rotation_angle_imod=88.4
+# fib_tilt=-20
+# ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle') # it stores the [index AxisDirection TiltAngle]
+# # # ###--------------------------------------
 
 #ctffind angle:
 image_no=len(ctffind5_info[:,0])
