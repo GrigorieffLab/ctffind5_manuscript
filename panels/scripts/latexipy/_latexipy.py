@@ -291,7 +291,7 @@ def save_figure(filename, directory, exts, mkdir=True,
 
 
 @contextmanager
-def figure(filename, *, directory=None, exts=['pdf','png'], size=None,
+def figure(filename, *, directory=None, exts=['pdf','png','eps'], size=None,
            mkdir=True,tight_layout=True):
     '''
     The primary interface for creating figures.

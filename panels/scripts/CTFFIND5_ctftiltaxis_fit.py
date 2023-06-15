@@ -1,6 +1,8 @@
 """
 # rotation matrix transform, find the 0 tilt initial axis direction and tilt angle
 # by Lingli Kong @ Grigorieff lab
+
+# minor changes by Johannes Elferich @ Grigorieff lab to make style consistent
 """
 # %% module loading
 import numpy as np
@@ -153,7 +155,7 @@ def error_plot(error_series, threshold, index, zero_rot,filename):
 # # # lamella grid 1 tilt04 dataset--------------
 # filepath='../unstacked_tilt04/'
 filepath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/'
-outpath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/fit_1/'
+outpath='./tmp/tilt04_ctffind5/tilt04_ctffind5/fit_1/'
 rawtltfile='/data/lingli/Lingli_20221028/grid1/tilt04.tlt'
 ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle_1') # it stores the [index AxisDirection TiltAngle]
 # rotation_angle_imod=86.3
@@ -240,7 +242,8 @@ range_adjust_for_plot(exp_degrees,rotation_angle_imod,zero_rot)
 # # swap the column to use the function range_adjust_for_plot
 ctffind5_info[:,[2,1]]=ctffind5_info[:,[1,2]]
 range_adjust_for_plot(ctffind5_info,rotation_angle_imod,zero_rot)
-fitting_plot(ctffind5_info,ctf_degrees,range(image_no),zero_rot,outpath + 'fitted_ctffind.pdf', False)
+
+# fitting_plot(ctffind5_info,ctf_degrees,range(image_no),zero_rot,outpath + 'fitted_ctffind.pdf', False)
 
 # %%  Refinement: find the outliers and refine fitting=============================================================
 # sample orientation error calculation
@@ -272,7 +275,7 @@ new_index=np.where(vec_dis_val<=rmse)
 rotated_vec_new=np.sum(vec_series[new_index], axis=0)/len(new_index[0]) #average the normal vectors 
 target_matrix=rotation_matrix_from_vectors(vec,rotated_vec_new)
 zero_rot_new=R.from_matrix(target_matrix).as_euler('zxz',degrees=True)
-error_plot(vec_dis_val, rmse, new_index, zero_rot_new,outpath+'error_plot.pdf')
+#error_plot(vec_dis_val, rmse, new_index, zero_rot_new,outpath+'error_plot.pdf')
 # error_plot(vec_dis_val, three_sigma, new_index)
 # error_plot(vec_dis_val, one_sigma, new_index)
 
@@ -293,7 +296,7 @@ ctf_degrees_new=generate_angle_axis_series(zero_tilt_obj_new,tem_matrix_series,i
 print("---refined fitted tilt angle and axis angle for each tilt---")
 print(np.around(ctf_degrees_new[:,1:],decimals=2))
 range_adjust_for_plot(ctf_degrees_new,rotation_angle_imod,zero_rot_new)
-fitting_plot(ctffind5_info,ctf_degrees_new,new_index,zero_rot_new,outpath + 'fitted_ctffind_outlier_removed.pdf', True)
+#fitting_plot(ctffind5_info,ctf_degrees_new,new_index,zero_rot_new,outpath + 'fitted_ctffind_outlier_removed.pdf', True)
 
 # %% save the results
 np.savetxt(outpath+'calculated_ctf_deg.txt',ctf_degrees[:,1:],fmt="%10.3f")
@@ -304,4 +307,50 @@ np.savetxt(outpath+'tilt_axis_angle_rotfix.txt',ctffind5_info,fmt="%10.3f")
 np.savetxt(outpath+'zero_tilt_outlier_removed.txt',zero_rot_new[1:],fmt="%10.3f")
 np.savetxt(outpath+'calculated_ctf_deg_outlier_removed.txt',ctf_degrees_new[:,1:],fmt="%10.3f")
 
+# JE Plotting code
 
+import latexipy as lp
+import scienceplots
+plt.style.use(['science','scatter','ieee'])
+
+with lp.figure(f"ctftilt_lamella1",tight_layout=False):
+    # genrate two plots, One for fitted alues one for errors. Te error plot should be below and have 1/4 of the height. The figure should be 8.85 cm wide.
+     
+    plt,(ax_tilt, ax_axis_angle, ax_error) = plt.subplots(3,1,figsize=(3.5,3.5),sharex=True,gridspec_kw={'height_ratios':[2,2,1]})  
+    ctffind5_data = ctffind5_info
+    fitted_data = ctf_degrees_new
+    index = new_index
+    fullindex=range(len(fitted_data[:]))
+    ax_axis_angle.plot(ctffind5_data[:,0],fitted_data[:,2],linestyle='--',color='r',label='Overall tilt model')
+    ax_axis_angle.scatter(ctffind5_data[index,0],ctffind5_data[index,2],marker='x',label='Single tilt measurement')
+    ax_tilt.plot(ctffind5_data[:,0],fitted_data[:,1],linestyle='--',color='r')
+
+    ax_tilt.scatter(ctffind5_data[index,0],ctffind5_data[index,1],marker='o')
+    outliers_index=np.delete(fullindex,new_index)
+    ax_axis_angle.scatter(ctffind5_data[outliers_index,0],ctffind5_data[outliers_index,2],color='grey',marker='x')#,label='outliers')
+    #ax_axis_angle.scatter(ctffind5_data[outliers_index,0],ctffind5_data[outliers_index,2],s=60,facecolors='none',edgecolors='g')
+    ax_tilt.scatter(ctffind5_data[outliers_index,0],ctffind5_data[outliers_index,1],marker='o',color='grey')#,label='outliers')
+    #ax_tilt.scatter(ctffind5_data[outliers_index,0],ctffind5_data[outliers_index,1],s=60,facecolors='none',edgecolors='g')
+    
+   
+    fullindex=range(len(angle_diff[:]))
+    outliers_index=np.delete(fullindex,index)
+    ax_error.scatter(index,angle_diff[index],marker='o')
+    ax_error.scatter(index,axis_diff[index],marker='x',color='k')
+    ax_error.hlines(0,0,len(angle_diff),'k',linestyles='-')
+    #ax_error.scatter(outliers_index,error_series[outliers_index],s=60,alpha=0.5, label='outliers')
+    #ax_error.hlines(threshold,0,len(error_series),'k',linestyles='dotted')
+    #ax_error.text(1,threshold*2,'$\phi$ = '+str('{:.1f}'.format(zero_rot[2]))+'$^\circ$'+'\n'+'$\\theta$ = '+ \
+    #                                str('{:.1f}'.format(zero_rot[1])+'$^\circ$'), style='italic',fontsize=15, bbox={'facecolor': 'gray', 'edgecolor': 'none', 'alpha': 0.1, 'pad': 3})
+    # ax.text(25,threshold*2,'$\phi$ = '+str('{:.1f}'.format(zero_rot[2]))+'$^\circ$'+'\n'+'$\\theta$ = '+ \
+                                    # str('{:.1f}'.format(zero_rot[1])+'$^\circ$'), style='italic',fontsize=15, bbox={'facecolor': 'gray', 'edgecolor': 'none', 'alpha': 0.1, 'pad': 3})
+
+    # ax[1].text(0.5,-60.0,'$\\theta$ = '+str('{:.1f}'.format(zero_rot[1])+'$^\circ$'), style='italic',fontsize=15, bbox={'facecolor': 'gray', 'alpha': 0.2, 'pad': 3})
+    #ax_error.annotate('RMSE', xy=(1,threshold))
+
+
+    plt.subplots_adjust(hspace=0.05)
+    ax_tilt.set_ylabel('Tilt angle (°)')
+    ax_axis_angle.set_ylabel('Tilt axis angle (°)')
+    ax_error.set_ylabel('Error (°)')
+    ax_error.set_xlabel('Image index')

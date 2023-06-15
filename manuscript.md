@@ -9,14 +9,37 @@ author:
 
 ## Abstract
 
-Images taken by transmission electron microscopes (TEM) are distorted by the spherical aberration of the lens system and by the sample not being within the focal plane of the instrument, among other factors. These distortions can be modeled in reciprocal space using the contrast-transfer function (CTF). Accurate estimation and correction of the CTF has been one of the key aspects of the "resolution-revolution" in cryo-EM microscopy. While estimation of the CTF is mainly done to restore as much of the image as possible, many important sample characteristics are encoded in the CTF, such as sample thickness and sample tilt. These characteristics are of high interest for the microscopist, especially when imaging cellular samples. Currently, a substantial bottleneck for high-resolution cryo-EM of cellular samples is the preparation of samples with suitable thickness and the identification of areas within a given sample that are amenable for data collection. Real-time measurement of sample thickness and geometry, derived from accurate modeling of the CTF would therefore a tool towards minimizing this bottleneck. In this paper we describe the program CTFFIND5, the newest iteration of the commonly used software CTFFIND, which has been improved by implementing procedures for the before mentioned measurements. We describe how these procedures have been implemented and validate their accuracy using samples of eucaryotic cells thinned by cryo-focused ion beam (cryo-FIB) milling. We find that CTFFIND5 can estimate the tilt of the sample with an accuracy of X and the thickness of the sample with an accuracy of X nm. 
+Images taken by transmission electron microscopes (TEM) are distorted by the
+spherical aberration of the lens system and by the sample not being within the
+focal plane of the instrument, among other factors. These distortions can be
+modeled in reciprocal space using the contrast-transfer function (CTF). Accurate
+estimation and correction of the CTF has been one of the key aspects of the
+"resolution-revolution" in cryo-EM microscopy. While estimation of the CTF is
+mainly done to restore as much of the image as possible, many important sample
+characteristics are encoded in the CTF, such as sample thickness and sample
+tilt. These characteristics are of high interest for the microscopist,
+especially when imaging cellular samples. Currently, a substantial bottleneck
+for high-resolution cryo-EM of cellular samples is the preparation of samples
+with suitable thickness and the identification of areas within a given sample
+that are amenable for data collection. Real-time measurement of sample thickness
+and geometry, derived from accurate modeling of the CTF would therefore a tool
+towards minimizing this bottleneck. In this paper we describe the program
+CTFFIND5, the newest iteration of the commonly used software CTFFIND, which has
+been improved by implementing procedures for the before mentioned measurements.
+We describe how these procedures have been implemented and validate their
+accuracy using samples of eucaryotic cells thinned by cryo-focused ion beam
+(cryo-FIB) milling. We find that CTFFIND5 can estimate the tilt of the sample
+with an accuracy of X and the thickness of the sample with an accuracy of X nm. 
 
 ## Introduction
 
 Transmission electron microscopy of biological spcimens at cryogenic
 temperatures (cryo-EM) is a powerful tool to image biomolecules at high
 resolution, both in solution and within the cell. Interpretation of cryo-EM
-images depends on understanding the 
+images depends on understanding the image formation process of the TEM, which is
+described by the CTF. The CTF is commonly modeled using an astigmatic defocus,
+the spherical aberration, and if appropriate a phase shift introduced by a phase
+plate as parameters. 
 
 ## Methods
 
@@ -24,14 +47,41 @@ images depends on understanding the
 
 ### Verification of tilt estimation using tilted samples of aquaporin crystals
 
-We used aquaporin 2D crystal samples [@doi:org/10.1038/35036519] to verify the reliability of the tilt and axis angle estimation of CTFFIND5, the real angle and axis direction of which are regarded to be accurately given. Since the default CTF estimation setting in cisTEM disabled the tilt search, select yes for tilt search under expert options to conduct the tilt estimation operation. The other initial parameters are kept the same as the default cisTEM settings, i.e., defocus search ranges from 5000 $\Angstrom$ to 50000 $\Angstrom$ with step of 100 $\Angstrom$, resolution fitting ranges from 30 $\Angstrom$ to 5 $\Angstrom$, and the box size is 512 pixels. 
+We used aquaporin 2D crystal samples [@doi:org/10.1038/35036519] to verify the
+reliability of the tilt and axis angle estimation of CTFFIND5, the real angle
+and axis direction of which are regarded to be accurately given. Since the
+default CTF estimation setting in cisTEM disabled the tilt search, select yes
+for tilt search under expert options to conduct the tilt estimation operation.
+The other initial parameters are kept the same as the default cisTEM settings,
+i.e., defocus search ranges from 5000 $\Angstrom$ to 50000 $\Angstrom$ with step
+of 100 $\Angstrom$, resolution fitting ranges from 30 $\Angstrom$ to 5
+$\Angstrom$, and the box size is 512 pixels. 
 
 ### Verification of tilt estimation using tilt-series
-When the lamella sample is loaded to the microscope, the real orientation of the lamella sample can be slightly off from the direction of the TEM tilting axis and the milling angles set by users. This error can influence the tomography alignment. The quality of the CTF correction simply based on the microscope’s axis and tilt settings can also be less satisfactory. In CTFFIND5, we extended the implementation of the tilt estimation to cryo-EM lamella samples. Since our algorithm enabled the direct measurements of the tilt angle and axis direction for each tilt image, the lamella initial loading orientation, i.e., the orientation of the lamella when it is loaded to the microscope before tilting, can be calculated by combining the axis and tilt angles from CTFFIND5 and the microscope tilt settings. If we use a rotation matrix $R_{0}$ to represent the real lamella initial loading orientation and a rotation matrix $R_{tem}$ to represent the tilt and axis information of the microscope, the rotation matrix of the sample’s real orientation can be expressed as follows:  
+When the lamella sample is loaded to the microscope, the real orientation of the
+lamella sample can be slightly off from the direction of the TEM tilting axis
+and the milling angles set by users. This error can influence the tomography
+alignment. The quality of the CTF correction simply based on the microscope’s
+axis and tilt settings can also be less satisfactory. In CTFFIND5, we extended
+the implementation of the tilt estimation to cryo-EM lamella samples. Since our
+algorithm enabled the direct measurements of the tilt angle and axis direction
+for each tilt image, the lamella initial loading orientation, i.e., the
+orientation of the lamella when it is loaded to the microscope before tilting,
+can be calculated by combining the axis and tilt angles from CTFFIND5 and the
+microscope tilt settings. If we use a rotation matrix $R_{0}$ to represent the
+real lamella initial loading orientation and a rotation matrix $R_{tem}$ to
+represent the tilt and axis information of the microscope, the rotation matrix
+of the sample’s real orientation can be expressed as follows:  
 $$
 R = R_{0} \times R_{tem}
 $${#eq:t}
-where $R_0$ is a fixed term. The tilt and axis angles are encoded to a rotation matrix $R$ by embedding the tilt angle $\theta$ and axis direction $\phi$ to a ‘zxz’ rotation system in a sequence of ‘($\phi$, $\theta$, $-\phi$)’. In CTFFIND5, both the axis direction and the tilt angle are clockwise angles. The axis direction is the angle formed between the tilt axis and x-axis. They can be converted to the angle system of the microscope ($\theta_{tem}$, $\phi_{tem}$) by: 
+where $R_0$ is a fixed term. The tilt and axis angles are encoded to a rotation
+matrix $R$ by embedding the tilt angle $\theta$ and axis direction $\phi$ to a
+‘zxz’ rotation system in a sequence of ‘($\phi$, $\theta$, $-\phi$)’. In
+CTFFIND5, both the axis direction and the tilt angle are clockwise angles. The
+axis direction is the angle formed between the tilt axis and x-axis. They can be
+converted to the angle system of the microscope ($\theta_{tem}$, $\phi_{tem}$)
+by: 
 $$
 \begin{aligned}
 \phi_{tem} &=270^{\circ} - \phi_{ctffind5} \\
@@ -39,7 +89,20 @@ $$
 \end{aligned}
 $$ {#eq:t}
 
-Considering that the results obtained by CTFFIND5 represent the real orientation of the sample, by fitting equation (1) to the CTFFIND5 result $R_{ctf}$, the lamella loading orientation $R_{0}$ can be obtained. Furthermore, since the sample is a plane, we can use the normal vector of the lamella to represent the orientation. Thus, the overall effect of tilt angle or axis direction can be considered simultaneously. By calculating the normal vector difference between the fitted initial orientation and the one calculated directly by $R_{ctf} \times R_{tem}^{-1}$ at each tilt, the root mean squared error (RMSE) can be obtained to find the outliers to further improve the fitting result. To generate better defocus and tilt estimation, the defocus search range and resolution fitting range should be adjusted according to the dataset. For our cryo-EM samples, the resolution fitting range is from 50 $\Angstrom$ to 10 $\Angstrom$ and the defocus search range is $\pm$ 10000 to 20000 $\Angstrom$ from the data collection defocus.
+Considering that the results obtained by CTFFIND5 represent the real orientation
+of the sample, by fitting equation (1) to the CTFFIND5 result $R_{ctf}$, the
+lamella loading orientation $R_{0}$ can be obtained. Furthermore, since the
+sample is a plane, we can use the normal vector of the lamella to represent the
+orientation. Thus, the overall effect of tilt angle or axis direction can be
+considered simultaneously. By calculating the normal vector difference between
+the fitted initial orientation and the one calculated directly by $R_{ctf}
+\times R_{tem}^{-1}$ at each tilt, the root mean squared error (RMSE) can be
+obtained to find the outliers to further improve the fitting result. To generate
+better defocus and tilt estimation, the defocus search range and resolution
+fitting range should be adjusted according to the dataset. For our cryo-EM
+samples, the resolution fitting range is from 50 $\Angstrom$ to 10 $\Angstrom$
+and the defocus search range is $\pm$ 10000 to 20000 $\Angstrom$ from the data
+collection defocus.
 
 
 
@@ -73,11 +136,22 @@ $$
 t = /frac{1}{\lambda\textbf{g}^{2}}
 $$ {#eq:t}
 
-If the option "Brute-force 1D fit" is selected, CTFFIND5 will further refine $t$ and $\Delta f$ by calculating the normalized cross-correlation between the radial average of the powerspectrum (corrected for astigmatism, as described in ) and $CTF_t$, searching systematically for the best combination of $t$ in the range of 50-400 nm at 10 nm steps and $\Delta f$ in 10 nm steps from the previously fitted value +- 200 nm. 
+If the option "Brute-force 1D fit" is selected, CTFFIND5 will further refine $t$
+and $\Delta f$ by calculating the normalized cross-correlation between the
+radial average of the powerspectrum (corrected for astigmatism, as described in
+) and $CTF_t$, searching systematically for the best combination of $t$ in the
+range of 50-400 nm at 10 nm steps and $\Delta f$ in 10 nm steps from the
+previously fitted value +- 200 nm. 
 
-Finally, if the option "2D-refinement" is selected CTFFIND5 will optimize $t$, $\Delta f_{1}$, $\Delta f_{2}$, and $\omega$ using teh conjugate gradient algorithm descibed in and the normalized cross correlation between $CTF_{t}$ and the 2D powespectrum as a scoring function.
+Finally, if the option "2D-refinement" is selected CTFFIND5 will optimize $t$,
+$\Delta f_{1}$, $\Delta f_{2}$, and $\omega$ using teh conjugate gradient
+algorithm descibed in and the normalized cross correlation between $CTF_{t}$ and
+the 2D powespectrum as a scoring function.
 
-After the optimal values for $t$ and $\Delta f$ have been obtained the "goodness of fit" crosscorrelation is recalculated using $CTF_{t}$, with the a frequency window that is 1.5 time larger, to avoid the drop-off in the node regions of $CTF_{t}$.
+After the optimal values for $t$ and $\Delta f$ have been obtained the "goodness
+of fit" crosscorrelation is recalculated using $CTF_{t}$, with the a frequency
+window that is 1.5 time larger, to avoid the drop-off in the node regions of
+$CTF_{t}$.
 
 
 ### Verification of sample thickness estimation using Lambert-Beers law
@@ -111,51 +185,82 @@ and categorized the reason for the discrepance into "wrong fitting",
 
 ### CTF correction of medium magnification lamella images
 
-The CTF of the representative mmm image was estimated using CTFFIND4 using the parameters: ...,...,.... We then used the program apply_ctf fo the cisTEM suite to flip the phases according to the ctf fit. We furthermore implemented the Wiener like filter described in [@doi:] in apply_ctf to produce the image shown in ... . The parameters for the Wiener like filter were chosen manually as ... to produce the subjectively most natural looking image.
+The CTF of the representative mmm image was estimated using CTFFIND4 using the
+parameters: ...,...,.... We then used the program apply_ctf fo the cisTEM suite
+to flip the phases according to the ctf fit. We furthermore implemented the
+Wiener like filter described in [@doi:] in apply_ctf to produce the image shown
+in ... . The parameters for the Wiener like filter were chosen manually as ...
+to produce the subjectively most natural looking image.
 
 
 
 ## Results
 
-### CTF estimation and correction assists biological interpretation of intermediate-magnification lamella images
 
 ### Tilt estimation by CTF
 
 \begin{table}[]
 \centering
-\caption{Comparison of CTFFIND5 Result and the Crystal Information}
+\caption{Comparison of CTFFIND5 Result and the Crystal Information}\label{tbl:tiltcrystal}
 \label{tab:my-table}
-\begin{tabular}{|c|ccc|ccc|}
-\hline
-Image  & \multicolumn{3}{c|}{Tilt axis $\phi$}                                   & \multicolumn{3}{c|}{Tilt angle $\theta$}                                    \\ \cline{2-7} 
-       & \multicolumn{1}{c|}{crys.}  & \multicolumn{1}{c|}{ctffind5} & $\Delta\phi$   & \multicolumn{1}{c|}{crys}   & \multicolumn{1}{c|}{ctffind5} & $\Delta\theta$     \\ \hline
-530394 & \multicolumn{1}{c|}{93.28}  & \multicolumn{1}{c|}{94.98}    & -1.7  & \multicolumn{1}{c|}{19.6}   & \multicolumn{1}{c|}{20.69}    & -1.09   \\ \hline
-530419 & \multicolumn{1}{c|}{109.78} & \multicolumn{1}{c|}{106.51}   & 3.27  & \multicolumn{1}{c|}{18.66}  & \multicolumn{1}{c|}{16.04}    & 2.62    \\ \hline
-530430 & \multicolumn{1}{c|}{104.38} & \multicolumn{1}{c|}{101.13}   & 3.25  & \multicolumn{1}{c|}{-21.32} & \multicolumn{1}{c|}{20.37}    & -41.69  \\ \hline
-530444 & \multicolumn{1}{c|}{98.39}  & \multicolumn{1}{c|}{97.62}    & 0.77  & \multicolumn{1}{c|}{20.72}  & \multicolumn{1}{c|}{20.88}    & -0.16   \\ \hline
-660027 & \multicolumn{1}{c|}{99.68}  & \multicolumn{1}{c|}{102.34}   & -2.66 & \multicolumn{1}{c|}{19.4}   & \multicolumn{1}{c|}{22.39}    & -2.99   \\ \hline
-540149 & \multicolumn{1}{c|}{94.45}  & \multicolumn{1}{c|}{85.84}    & 8.61  & \multicolumn{1}{c|}{43.08}  & \multicolumn{1}{c|}{44.59}    & -1.51   \\ \hline
-540291 & \multicolumn{1}{c|}{96.16}  & \multicolumn{1}{c|}{98.1}     & -1.94 & \multicolumn{1}{c|}{45.11}  & \multicolumn{1}{c|}{40.68}    & 4.43    \\ \hline
-540302 & \multicolumn{1}{c|}{93.98}  & \multicolumn{1}{c|}{93.39}    & 0.59  & \multicolumn{1}{c|}{44.7}   & \multicolumn{1}{c|}{44.21}    & 0.49    \\ \hline
-540313 & \multicolumn{1}{c|}{95.34}  & \multicolumn{1}{c|}{95.13}    & 0.21  & \multicolumn{1}{c|}{44.03}  & \multicolumn{1}{c|}{46.49}    & -2.46   \\ \hline
-660183 & \multicolumn{1}{c|}{97.69}  & \multicolumn{1}{c|}{97.27}    & 0.42  & \multicolumn{1}{c|}{48.13}  & \multicolumn{1}{c|}{48.99}    & -0.86   \\ \hline
-550069 & \multicolumn{1}{c|}{90.08}  & \multicolumn{1}{c|}{92.55}    & -2.47 & \multicolumn{1}{c|}{60.46}  & \multicolumn{1}{c|}{60.83}    & -0.37   \\ \hline
-550089 & \multicolumn{1}{c|}{91.48}  & \multicolumn{1}{c|}{92.04}    & -0.56 & \multicolumn{1}{c|}{60.5}   & \multicolumn{1}{c|}{60.72}    & -0.22   \\ \hline
-660291 & \multicolumn{1}{c|}{93.23}  & \multicolumn{1}{c|}{92.19}    & 1.04  & \multicolumn{1}{c|}{-57.59} & \multicolumn{1}{c|}{59.19}    & -116.78 \\ \hline
-660421 & \multicolumn{1}{c|}{89.32}  & \multicolumn{1}{c|}{89.06}    & 0.26  & \multicolumn{1}{c|}{61.36}  & \multicolumn{1}{c|}{60.01}    & 1.35    \\ \hline
-680341 & \multicolumn{1}{c|}{89.67}  & \multicolumn{1}{c|}{90.02}    & -0.35 & \multicolumn{1}{c|}{58.68}  & \multicolumn{1}{c|}{59.62}    & -0.94   \\ \hline
-530345 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{108.6}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.84}     & -0.84   \\ \hline
-530356 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{231.17}   &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.93}     & -1.93   \\ \hline
-530358 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{56.58}    &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{1.29}     & -1.29   \\ \hline
-530375 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{3.21}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0.79}     & -0.79   \\ \hline
-530378 & \multicolumn{1}{c|}{N/A}    & \multicolumn{1}{c|}{67.6}     &       & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{2.17}     & -2.17   \\ \hline
+\ra{1.3}
+\begin{tabular}{@{}rcrrrcrrr@{}}
+\toprule
+Image  & \phantom{abc} &\multicolumn{3}{c}{Tilt axis $\phi$}    & \phantom{abc}                              & \multicolumn{3}{c}{Tilt angle $\theta$}                                    \\ \cmidrule{3-5}  \cmidrule{7-9}
+       && crys  & ctffind5 & $\Delta\phi$   && crys   & ctffind5 & $\Delta\theta$     \\ \midrule
+530394 && 93.28  & 94.98    & -1.7  && 19.6   & 20.69    & -1.09   \\ 
+530419 && 109.78 & 106.51   & 3.27  && 18.66  & 16.04    & 2.62    \\ 
+530430 && 104.38 & 101.13   & 3.25  && -21.32 & 20.37    & -41.69  \\ 
+530444 && 98.39  & 97.62    & 0.77  && 20.72  & 20.88    & -0.16   \\ 
+660027 && 99.68  & 102.34   & -2.66 && 19.4   & 22.39    & -2.99   \\ 
+540149 && 94.45  & 85.84    & 8.61  && 43.08  & 44.59    & -1.51   \\ 
+540291 && 96.16  & 98.1     & -1.94 && 45.11  & 40.68    & 4.43    \\ 
+540302 && 93.98  & 93.39    & 0.59  && 44.7   & 44.21    & 0.49    \\ 
+540313 && 95.34  & 95.13    & 0.21  && 44.03  & 46.49    & -2.46   \\ 
+660183 && 97.69  & 97.27    & 0.42  && 48.13  & 48.99    & -0.86   \\ 
+550069 && 90.08  & 92.55    & -2.47 && 60.46  & 60.83    & -0.37   \\ 
+550089 && 91.48  & 92.04    & -0.56 && 60.5   & 60.72    & -0.22   \\ 
+660291 && 93.23  & 92.19    & 1.04  && -57.59 & 59.19    & -116.78 \\ 
+660421 && 89.32 & 89.06    & 0.26  && 61.36  & 60.01    & 1.35    \\ 
+680341 && 89.67 & 90.02    & -0.35 && 58.68  & 59.62    & -0.94   \\ 
+530345 && N/A    & 108.6    &       && 0      & 0.84     & -0.84   \\ 
+530356 && N/A    & 231.17   &       && 0      & 1.93     & -1.93   \\ 
+530358 && N/A    & 56.58    &       && 0      & 1.29     & -1.29   \\ 
+530375 && N/A    & 3.21     &       && 0      & 0.79     & -0.79   \\ 
+530378 && N/A   & 67.6     &       && 0      & 2.17     & -2.17   \\ 
+\bottomrule
 \end{tabular}
 \end{table}
 
-Table 1 compares the real tilt information of the samples and the estimation results of CTFFIND5. As shown in Table 1, the results of CTFFIND5 agree well with the aquaporin crystals information. For crystals with 0$^{\circ}$ tilt, CTFFIND5 still gives an angle estimation. This is because CTFFIND5 estimates the tilt based on the defocus difference among the tiles and the sample cannot be perfectly flat to have the same defocus throughout the image. Therefore, CTFFIND5 estimation results tend to reflect the angle and axis of the uneven sample surface in this case. 
+To verify that CTFFIND5 can reliably estimate the tilt of the sample, we used a
+dataset of tilted aquaporin crystals, that was use to benchmark the original
+CTFTILT implementation. Table [@tbl:tiltcrystal] compares the tilt information
+of the samples obtained from crystallographic analysis and the estimation
+results of CTFFIND5. As shown in Table [@tbl:tiltcrystal], the results of CTFFIND5 agree well
+with the aquaporin crystals information. For crystals with 0$^{\circ}$ tilt,
+CTFFIND5 still gives an angle estimation. This is because CTFFIND5 estimates the
+tilt based on the defocus difference among the tiles and the sample cannot be
+perfectly flat to have the same defocus throughout the image. Therefore,
+CTFFIND5 estimation results tend to reflect the angle and axis of the uneven
+sample surface in this case. 
 
-Fig 1. Presents the fitted result and the orientation measurement obtained by CTFFIND5. The sample in Fig 1(a) is milled by 20$^{\circ}$ and the TEM axis direction is 178.4$^{\circ}$.  The fitting result $(\theta, \phi)$ is (19.5$^{\circ}$, 171.9$^{\circ}$). If we remove the outliers, the fitting result can be updated to (20.6$^{\circ}$, 172.9$^{\circ}$). As we can see from the result, the fitted milling angle only has 0.6$^{\circ}$ difference. However, the axis direction has up to a 6$^{\circ}$ difference, which means that the loaded grid is not well aligned with the orientation of the tilting axis of the microscope. 
-The sample in Fig1(b) is milled by 20$^{\circ}$ and the TEM axis direction is 176.3$^{\circ}$. The fitting result is (-22.1$^{\circ}$, 187.41$^{\circ}$). By removing the outliers, the fitting result is (-22.9$^{\circ}$, 185.3$^{\circ}$). Although CTFFIND5 has some noticeable errors at the lower tilt angles, the fitting result is still within a reasonable range. The value of tilt angles are all adjusted to be negative values for a better display of the fitted curve. When a tilt angle is converted to a positive value, the corresponding axis direction should be adjusted by 180$^{\circ}$. More examples are provided in the supplementary material. 
+Fig 1. Presents the fitted result and the orientation measurement obtained by
+CTFFIND5. The sample in Fig 1(a) is milled by 20$^{\circ}$ and the TEM axis
+direction is 178.4$^{\circ}$.  The fitting result $(\theta, \phi)$ is
+(19.5$^{\circ}$, 171.9$^{\circ}$). If we remove the outliers, the fitting result
+can be updated to (20.6$^{\circ}$, 172.9$^{\circ}$). As we can see from the
+result, the fitted milling angle only has 0.6$^{\circ}$ difference. However, the
+axis direction has up to a 6$^{\circ}$ difference, which means that the loaded
+grid is not well aligned with the orientation of the tilting axis of the
+microscope. The sample in Fig1(b) is milled by 20$^{\circ}$ and the TEM axis
+direction is 176.3$^{\circ}$. The fitting result is (-22.1$^{\circ}$,
+187.41$^{\circ}$). By removing the outliers, the fitting result is
+(-22.9$^{\circ}$, 185.3$^{\circ}$). Although CTFFIND5 has some noticeable errors
+at the lower tilt angles, the fitting result is still within a reasonable range.
+The value of tilt angles are all adjusted to be negative values for a better
+display of the fitted curve. When a tilt angle is converted to a positive value,
+the corresponding axis direction should be adjusted by 180$^{\circ}$. More
+examples are provided in the supplementary material. 
 
 
 ### Sample Thickness estimation by CTF
@@ -229,6 +334,24 @@ of the linear model was -12.2 nm, meaning that the node position systemnatically
 predicts a smaller thickness than the extintion of electrons. Possible
 explanations are discussed below. The standard deviation of the residuals was
 5.7 nm.
+
+### CTF estimation and correction assists biological interpretation of intermediate-magnification lamella images
+
+During data collection of Cryo-EM data in cells, the operator frequently relies
+on images taken at a low magnification to select areas of interest and establish
+biological context of taken micrographs. These images are usually taken at
+pixelsize of approximately 40 angstroms and a defocus of around 200 um. This
+produces strong contrast of biological membranes, but can sometimes lead to
+substantial fringes of biological membranes [@fig:mmm]A. In order to correct for
+these we found that CTFFind produces accurate CTF estimation of such overview
+images [@fig:mmm]B. In order to correct for these the program apply_ctf of the
+cisTEM suite can be used to flip the phases of the resolution ranges with
+negative contrast [@fig:mmm]C. However, we found that using the wiener filter
+based phase correction describe by Tegunov et.al. produces a natrually looking
+image that might be best suited to judge the biological context [@fig:mmm]D. The
+estimation of the CTF as well as the phase correction can be perfomed within a
+few seconds [TODO: actual measure runtime], making it feasible to usew this
+approach during data collection.
 
 ## Discussion
 

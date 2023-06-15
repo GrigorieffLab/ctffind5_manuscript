@@ -90,6 +90,8 @@ $endif$
 $if(linestretch)$
 \usepackage{setspace}
 $endif$
+\usepackage{booktabs}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}

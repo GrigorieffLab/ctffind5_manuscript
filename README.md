@@ -110,4 +110,11 @@ Undiff
 
 #### Figure 5: Verification and error estimate of thickness 
 
+#### Notes
+
+Minimum 600dpi
+EPS
+TIFF
+8.85cm width
+
 
