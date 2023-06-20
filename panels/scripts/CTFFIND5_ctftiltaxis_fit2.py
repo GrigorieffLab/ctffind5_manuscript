@@ -154,10 +154,10 @@ def error_plot(error_series, threshold, index, zero_rot,filename):
 # %% data loading and parameter initialization========================================================================
 # # # lamella grid 1 tilt04 dataset--------------
 # filepath='../unstacked_tilt04/'
-filepath='/data/lingli/CTFTiltFit/tilt04_ctffind5/tilt04_ctffind5/'
-outpath='./tmp/tilt04_ctffind5/tilt04_ctffind5/fit_1/'
-rawtltfile='/data/lingli/Lingli_20221028/grid1/tilt04.tlt'
-ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle_1') # it stores the [index AxisDirection TiltAngle]
+filepath='/data/lingli/CTFTiltFit/rawdata/rawdata_CTFTILT/tomo03_ctffind5/'
+outpath='./tmp/tomo03_ctffind5/tomo03_ctffind5/fit_1/'
+rawtltfile='/data/lingli/CTFTiltFit/rawdata/tomo03.tlt'
+ctffind5_info=np.loadtxt(filepath +'tilt_axis_angle') # it stores the [index AxisDirection TiltAngle]
 # rotation_angle_imod=86.3
 rotation_angle_imod=88.4
 fib_tilt=20
@@ -313,7 +313,7 @@ import latexipy as lp
 import scienceplots
 plt.style.use(['science','scatter','ieee'])
 
-with lp.figure(f"ctftilt_lamella1",tight_layout=False):
+with lp.figure(f"ctftilt_lamella2",tight_layout=False):
     # genrate two plots, One for fitted alues one for errors. Te error plot should be below and have 1/4 of the height. The figure should be 8.85 cm wide.
      
     plt,(ax_tilt, ax_axis_angle, ax_error) = plt.subplots(3,1,figsize=(3.5,3.5),sharex=True,gridspec_kw={'height_ratios':[2,2,1]})  
@@ -358,4 +358,4 @@ with lp.figure(f"ctftilt_lamella1",tight_layout=False):
     ax_axis_angle.set_ylabel('Tilt axis angle (°)')
     ax_error.set_ylabel('Error (°)')
     ax_error.set_xlabel('Nominal stage tilt angle (°)')
-    ax_error.set_ylim(-12,12)
+    #eax_error.set_ylim(-22,22)
