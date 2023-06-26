@@ -202,7 +202,6 @@ to produce the subjectively most natural looking image.
 \begin{table}[]
 \centering
 \caption{Comparison of CTFFIND5 Result and the Crystal Information}\label{tbl:tiltcrystal}
-\label{tab:my-table}
 \ra{1.3}
 \begin{tabular}{@{}rcrrrcrrr@{}}
 \toprule
@@ -357,10 +356,22 @@ approach during data collection.
 
 ## Figures
 
-![Tilt estimation (A) Variance score as a function of tilt axis orientation and sample tilt](figures/tilt_figure.png){#fig:tilt}
+![Tilt estimation (A) Variance score as a function of tilt axis orientation and
+sample tilt](figures/tilt_figure.png){#fig:tilt width=50%}
 
-![CTF correction of medium magnification overviews](figures/mmm_figure.png){#fig:mmm}
+![Cryo-EM Lamella Tilt and Axis Fitting
+Result](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
 
-![Validation of sample thickness estimation](figures/node_figure.png){#fig:node}
+![Estimating sample thickness by CTF Nodes](figures/node_figure.png){#fig:node width=50%}
 
-![Cryo-EM Lamella Tilt and Axis Fitting Result](figures/TiltFitting.png){#fig:tilt_fitting}
+![Validation of sample thickness
+estimation](figures/node_validation_figure.png){#fig:nodevalidationthickness width=50%}
+
+![Validation of sample thickness estimation by
+tomography](figures/node_validation_figure_tomo.png){#fig:nodevalidationtomo width=50%}
+
+
+![CTF correction of medium magnification
+overviews](figures/mmm_figure.png){#fig:mmm width=50%}
+
+
