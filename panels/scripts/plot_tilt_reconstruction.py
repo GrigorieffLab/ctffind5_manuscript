@@ -57,38 +57,37 @@ info_tilt_ctf = pd.read_sql(f"SELECT * FROM ESTIMATED_CTF_PARAMETERS WHERE CTF_E
 info_ctffind4_ctf = pd.read_sql(f"SELECT * FROM ESTIMATED_CTF_PARAMETERS WHERE CTF_ESTIMATION_ID = 381", con).iloc[0]
 
 with lp.figure(f"tilt_correction_example",tight_layout=False):
-    fig, ax_dict = plt.subplot_mosaic([['classic', 'BLANK'], ['tilt', 'BLANK']],
-                                  sharex=True,sharey=True,gridspec_kw={"width_ratios":[1.5,1.0]})
+    fig, ax_dict = plt.subplot_mosaic([['classic']],
+                                  sharex=True,sharey=True,gridspec_kw={"width_ratios":[1.0]},figsize=(3.5,1.5))
     ax_classic = ax_dict["classic"]
-    ax_tilt = ax_dict["tilt"]
-    ax_dict["BLANK"].axis("off")
-    ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["epa"], label="EPA")
-    ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["model"], label="Model")
-    ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["quality_score"], label="Fit quality")
-    ax_tilt.plot(tilt_ctf["spatial_freq"], tilt_ctf["epa"], label="EPA")
-    ax_tilt.plot(tilt_ctf["spatial_freq"], tilt_ctf["model"], label="Model")
-    ax_tilt.plot(tilt_ctf["spatial_freq"], tilt_ctf["quality_score"], label="Fit quality")
+    ax_tilt = ax_dict["classic"]
+    #ax_dict["BLANK"].axis("off")
+    ax_tilt.plot(tilt_ctf["spatial_freq"], tilt_ctf["epa"], label="Power spectrum")
+    ax_tilt.plot(tilt_ctf["spatial_freq"], tilt_ctf["quality_score"], label="Fit quality",linestyle="--", color="black")
 
+    ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["epa"], label="EPA", linestyle="-", color="deepskyblue")
+    #ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["model"], label="Model")
+    ax_classic.plot(classic_ctf["spatial_freq"], classic_ctf["quality_score"], label="Fit quality",linestyle="--", color="deepskyblue")
+    
     ax_tilt.set_xlabel("Spatial Resolution (Å)")
-    ax_tilt.set_ylabel("Value")
     ax_classic.set_ylabel("Value")
-    ax_tilt.set_xscale("log")
     ax_classic.set_xscale("log")
-    ax_tilt.set_xlim(15,2.5)
-    ax_tilt.set_xticks([12, 10, 8, 6, 4, 3])
-    ax_tilt.set_xticklabels([12, 10, 8, 6, 4, 3])
+    ax_tilt.set_xlim(15,4.0)
+    ax_classic.set_xlim(15,4.0)
+    ax_tilt.set_xticks([12, 10, 8, 6, 4])
+    ax_tilt.set_xticklabels([12, 10, 8, 6, 4])
 
     ax_classic.set_ylim(-0.1,1.05)
     ax_tilt.set_ylim(-0.1,1.05)
 
-    text_classic = AnchoredText(
-    f"\\underline{{Parameters:}}\nDefocus 1: {int(info_ctffind4_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_ctffind4_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_ctffind4_ctf['DEFOCUS_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_ctffind4_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_classic.transAxes, borderpad=0.0)
+    #text_classic = AnchoredText(
+    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_ctffind4_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_ctffind4_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_ctffind4_ctf['DEFOCUS_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_ctffind4_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_dict["BLANK"].transAxes, borderpad=0.0)
     #info_classic.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
-    ax_classic.add_artist(text_classic)
-    text_tilt = AnchoredText(
-    f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_tilt.transAxes, borderpad=0.0)
+    #ax_dict["BLANK"].add_artist(text_classic)
+    #text_tilt = AnchoredText(
+    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_dict["BLANK"].transAxes, borderpad=0.0)
     #info_tilt.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
-    ax_tilt.add_artist(text_tilt)
+    #ax_dict["BLANK"].add_artist(text_tilt)
 
     # Set space between subplots
     #fig.subplots_adjust(hspace=0.05)

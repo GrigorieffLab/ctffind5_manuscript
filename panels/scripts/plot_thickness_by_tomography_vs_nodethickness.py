@@ -47,6 +47,7 @@ data3 = pd.concat([data_melt1, data_melt2],ignore_index=True)
 
 
 with lp.figure(f"thickness_by_node_vs_by_tomography",tight_layout=False):
+    fig, ax_dict = plt.subplots(1,1,figsize=(3.5,2.5))
     # Plot using my_dict 3 as the x-acxis position and my_dict 2 as the y-axis
     # position (as a boxplot)
     #plt.scatter(my_dict3.values(), my_dict2.values(), marker="o", color="k")

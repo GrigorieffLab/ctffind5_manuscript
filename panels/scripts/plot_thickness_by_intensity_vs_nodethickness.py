@@ -18,6 +18,7 @@ with open("data/ER_Hox_120h_20211029_g1_l1_thickness_nodes_thickness.json","r") 
 defocus = [[thickness_data[m['movie_filename']],m['SAMPLE_THICKNESS']] for i,m in selected_micrographs.iterrows() if m['movie_filename'] in thickness_data ]
 filenames = [m['movie_filename']for i,m in selected_micrographs.iterrows() if m['movie_filename'] in thickness_data ]
 with lp.figure(f"thickness_by_node_vs_by_lamber_beer",tight_layout=False):
+    fig, ax_dict = plt.subplots(1,1,figsize=(3.5,2.5))
     cm = plt.cm.get_cmap('viridis')
     data_euc = np.array(defocus,dtype=float)
     filenames = np.array(filenames,dtype=object)

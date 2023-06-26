@@ -22,7 +22,7 @@ image_file = "/data/lingli/CTFTiltFit/rawdata/unstacked_tomo03/image_022_forplot
 
 mrc = mrcfile.open(image_file)
 
-# im = mrc.data[0].copy()
+#im = mrc.data[0].copy()
 im=mrc.data.copy()
 
 #im = downscale_image(im_data, 0.25)
@@ -43,6 +43,7 @@ tilt_binning_factor = 1.197719
 with open(json_file) as f:
     data = json.load(f)
 with lp.figure(f"tilt_search",tight_layout=False):
+    fig, ax = plt.subplots(figsize=(3.48, 2))
     plt.imshow(im, cmap='gray',vmin=0,vmax=255)
     for i, subregion in enumerate(data["search_tiles"]):
         # Plot rectangle
@@ -63,7 +64,9 @@ with lp.figure(f"tilt_search",tight_layout=False):
         plt.plot(x+w/2, y+h/2, 'x', color="white", markersize=0.9)
         plt.plot(x+w/2, y+h/2, 'x', color="black", markersize=0.5)
         #plt.gca().add_patch(plt.Rectangle((-1353, -1353), 1000, 1000, fill=False, edgecolor=color, linewidth=0.5))
-        plt.xlim(-1000, im.shape[1]+1000)
-        plt.ylim( im.shape[0]+1000, -1000)
+        plt.xlim(0, im.shape[1])
+        plt.ylim(0, im.shape[0])
+        
         plt.axis('off')
+        plt.tight_layout()
         

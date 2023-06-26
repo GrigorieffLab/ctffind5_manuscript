@@ -24,5 +24,6 @@ OUTPUT_FOLDER=figures
 # Loop through all SVG files in the figures folder
 
 for file in $FIGURES_FOLDER/*.svg; do
-    cairosvg $file -b white -o $OUTPUT_FOLDER/$(basename $file .svg).png
+    cairosvg $file -b white -d 600 -o $OUTPUT_FOLDER/$(basename $file .svg).png
+    cairosvg $file -b white -o $OUTPUT_FOLDER/$(basename $file .svg).eps
 done
