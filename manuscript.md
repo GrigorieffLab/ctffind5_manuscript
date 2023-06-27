@@ -356,13 +356,11 @@ approach during data collection.
 
 ## Figures
 
-![Tilt estimation (A) Variance score as a function of tilt axis orientation and
-sample tilt](figures/tilt_figure.png){#fig:tilt width=50%}
+![Tilt estimation and correction in CTFFIND5 (a) Micrographs are seperated into 128x128 pixel patches as indicated on this representative micrographs. Each dots represents the location of a patch and a blck-and-white box indicates the size of a patch. (b) A model of the expected powerspectra in each patch given an average defocus $\Delta f$, tilt angle $\theta$, and axis direction $\phi$ is compared to the actual powerspectra of tiles. After an optimal set of $\theta$ and $\phi$ has been found a corrected powerspectrum is calculated by summing the tile powerspecta after scaling them to correct for the defocus difference. (c) Comparison of the original powespectrum (solid line, light blue) to the tilt-corrected powerspectrum (solid, lines, black). The tilt-corrected powerspectrum exhibits clear peaks at higher spatial resolution as evident by the "goodness-of-fit" scores (dashed line). The estiamted CTF parameters are (), with an estimated fit resolution of ... for the original powerspectrum and ... for the tilt-corrected powerspectrum](figures/tilt_figure.png){#fig:tilt width=50%}
 
-![Cryo-EM Lamella Tilt and Axis Fitting
-Result](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
+![Validation of tilt estimation using tilt-series data. (a+b) Estimated tilt angle and tilt axis direction of 40 micrographs of a tilt-series of a fib-milled biological specimen. For each image the tilt angle (dot, upper plot) and tilt axis direction (cross, middle plot) are plotted as a function of the nominal stage angle. The data has been fitted to a model of the preexisting speciment tilt. The parameters ... and .. are consitent with a fib-milling angle of 15degrees and normal human eroor in aligning the fib-direction to the tilt axis of the stage. In the lower plot the absolute fit residuals for tilt angle and axis direction are plotted. Residuals for tilt-axis direction in images where the tilt-angle was lower than 10 degrees have been omitted, since the tilt axis direction is poorly defined in these cases.](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
 
-![Estimating sample thickness by CTF Nodes](figures/node_figure.png){#fig:node width=50%}
+![Sampel thickness estimation by fitting CTF modulation. (A) Example plot (B+C) Representative examples of fitting results ](figures/node_figure.png){#fig:node width=50%}
 
 ![Validation of sample thickness
 estimation](figures/node_validation_figure.png){#fig:nodevalidationthickness width=50%}
