@@ -322,6 +322,8 @@ with lp.figure(f"ctftilt_lamella2",tight_layout=False):
     index = new_index
     fullindex=range(len(fitted_data[:]))
     ax_axis_angle.plot(tem_info[:,2],fitted_data[:,2],linestyle='--',color='r',label='Overall tilt model')
+    print(f"Number of tilts: {len(fitted_data[:,2])}")
+
     ax_axis_angle.scatter(tem_info[index,2],ctffind5_data[index,2],marker='x',label='Single tilt measurement')
     ax_tilt.plot(tem_info[:,2],fitted_data[:,1],linestyle='--',color='r')
 

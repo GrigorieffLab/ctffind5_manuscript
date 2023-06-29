@@ -356,9 +356,48 @@ approach during data collection.
 
 ## Figures
 
-![Tilt estimation and correction in CTFFIND5 (a) Micrographs are seperated into 128x128 pixel patches as indicated on this representative micrographs. Each dots represents the location of a patch and a blck-and-white box indicates the size of a patch. (b) A model of the expected powerspectra in each patch given an average defocus $\Delta f$, tilt angle $\theta$, and axis direction $\phi$ is compared to the actual powerspectra of tiles. After an optimal set of $\theta$ and $\phi$ has been found a corrected powerspectrum is calculated by summing the tile powerspecta after scaling them to correct for the defocus difference. (c) Comparison of the original powespectrum (solid line, light blue) to the tilt-corrected powerspectrum (solid, lines, black). The tilt-corrected powerspectrum exhibits clear peaks at higher spatial resolution as evident by the "goodness-of-fit" scores (dashed line). The estiamted CTF parameters are (), with an estimated fit resolution of ... for the original powerspectrum and ... for the tilt-corrected powerspectrum](figures/tilt_figure.png){#fig:tilt width=50%}
+![Tilt estimation and correction in CTFFIND5 (a) Powespectra are calculated in
+128x128 pixel patches as indicated on this representative micrographs. Each dots
+represents the location of a patch and a box indicates the size of a patch. (b)
+A model of the expected powerspectrum in each patch given an average defocus
+$\Delta f$, tilt angle $\theta$, and axis direction $\phi$ is compared to the
+actual powerspectra of tiles. After an optimal set of $\theta$ and $\phi$ has
+been found a corrected powerspectrum is calculated by summing the tile
+powerspectra after scaling them to correct for the defocus difference. (c)
+Comparison of the original powespectrum (solid line, blue) to the tilt-corrected
+powerspectrum (solid line, black). The tilt-corrected powerspectrum exhibits
+clear peaks at higher spatial resolution than the overall powespectrum as
+evident by the "goodness-of-fit" scores (dashed lines). The estimated CTF
+parameters are $\Delta f_{1}=10603\text{\AA},\Delta f_{2}=10193\text{\AA},\alpha
+=85.9°$ for the overall powerspectrum and $\Delta f_{1}=10492\text{\AA},\Delta
+f_{2}=10342\text{\AA},\alpha =81.2°,\theta =12.3°,\phi=261.6°$ for the tilt
+corrected powerspectrum. The fit resolution is 5.9Å for the overall
+powerspectrum (dashed line, blue) and 4.6Å for the tilt-corrected spectrum
+(dashed line, black).](figures/tilt_figure.png){#fig:tilt width=50%}
 
-![Validation of tilt estimation using tilt-series data. (a+b) Estimated tilt angle and tilt axis direction of 40 micrographs of a tilt-series of a fib-milled biological specimen. For each image the tilt angle (dot, upper plot) and tilt axis direction (cross, middle plot) are plotted as a function of the nominal stage angle. The data has been fitted to a model of the preexisting speciment tilt. The parameters ... and .. are consitent with a fib-milling angle of 15degrees and normal human eroor in aligning the fib-direction to the tilt axis of the stage. In the lower plot the absolute fit residuals for tilt angle and axis direction are plotted. Residuals for tilt-axis direction in images where the tilt-angle was lower than 10 degrees have been omitted, since the tilt axis direction is poorly defined in these cases.](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
+![Validation of tilt estimation using tilt-series data. (a) Estimated tilt angle
+and tilt axis direction of 40 micrographs of a tilt-series taken on a FIB-milled
+biological specimen. For each image the tilt angle (dot, upper plot) and tilt
+axis direction (cross, middle plot) are plotted as a function of the nominal
+stage angle. The data has been fitted to a model of the specimen tilt before
+tilting the stage. The estimated tilt-angle is -20.6° and axis direction is
+172.1°, which is consistent with the FIB-milling angle of 20° and manual
+alignment of the milling direction to the tilt-axis at 178.4°. In the lower plot
+the absolute fit residuals for tilt angle and axis direction are plotted.
+Residuals for tilt-axis direction in images where the tilt-angle was lower than
+10 degrees have been omitted, since the tilt axis direction is poorly defined in
+these cases. (b) Estimated tilt angle and tilt axis direction of 30 micrographs
+of a tilt-series taken on a FIB-milled biological specimen. For each image the
+tilt angle (dot, upper plot) and tilt axis direction (cross, middle plot) are
+plotted as a function of the nominal stage angle. The data has been fitted to a
+model of the specimen tilt before tilting the stage. The estimated tilt-angle is
+22.9° and axis direction is 185.08°, which is consistent with the FIB-milling
+angle of 20° and manual alignment of the milling direction to the tilt-axis at
+178.4°. In the lower plot the absolute fit residuals for tilt angle and axis
+direction are plotted. Residuals for tilt-axis direction in images where the
+tilt-angle was lower than 10 degrees have been omitted, since the tilt axis
+direction is poorly defined in these
+cases.](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
 
 ![Sampel thickness estimation by fitting CTF modulation. (A) Example plot (B+C) Representative examples of fitting results ](figures/node_figure.png){#fig:node width=50%}
 

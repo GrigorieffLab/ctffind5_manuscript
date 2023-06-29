@@ -81,11 +81,11 @@ with lp.figure(f"tilt_correction_example",tight_layout=False):
     ax_tilt.set_ylim(-0.1,1.05)
 
     #text_classic = AnchoredText(
-    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_ctffind4_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_ctffind4_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_ctffind4_ctf['DEFOCUS_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_ctffind4_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_dict["BLANK"].transAxes, borderpad=0.0)
+    print(f"\\underline{{Parameters:}}\nDefocus 1: {int(info_ctffind4_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_ctffind4_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_ctffind4_ctf['DEFOCUS_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_ctffind4_ctf['DETECTED_RING_RESOLUTION']:.1f}Å")
     #info_classic.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
     #ax_dict["BLANK"].add_artist(text_classic)
     #text_tilt = AnchoredText(
-    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_dict["BLANK"].transAxes, borderpad=0.0)
+    print(f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å")
     #info_tilt.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
     #ax_dict["BLANK"].add_artist(text_tilt)
 
