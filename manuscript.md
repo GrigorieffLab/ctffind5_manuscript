@@ -399,7 +399,26 @@ tilt-angle was lower than 10 degrees have been omitted, since the tilt axis
 direction is poorly defined in these
 cases.](figures/TiltFitting.png){#fig:tilt_fitting width=50%}
 
-![Sampel thickness estimation by fitting CTF modulation. (A) Example plot (B+C) Representative examples of fitting results ](figures/node_figure.png){#fig:node width=50%}
+![Sample thickness estimation by fitting CTF modulation. (a) Comparison of the
+CTF model used sample thickness estimation in CTFFIND4 and after applying the
+modulation function (right) described by McMullan et.al. (b) Representative
+example of CTF fitting in a lamella without (top) and with (bottom) thickness
+estimation. The tilt of the specimen was estimated to be $12.3°$. When fitting
+without thickness estimation the estimated parameters were $\Delta
+f_{1}=10492\text{\AA},\Delta f_{2}=10342\text{\AA},\alpha =81.2°$. When taking
+smaple thickness into account the estimated parameters were $\Delta
+f_{1}=10481\text{\AA},\Delta f_{2}=10286\text{\AA},\alpha =69.6°,
+t=969\text{\AA}$. The estimated fit resolution was $4.6\text{\AA}$ and
+$3.4\text{\AA}$ without and with sample estimation, respectively. (c)
+Representative example of CTF fitting in a lamella without (top) and with
+(bottom) thickness estimation. The tilt of the specimen was estimated to be
+$6.7°$. When fitting without thickness estimation the estimated parameters were
+$\Delta f_{1}=8002\text{\AA},\Delta f_{2}=7717\text{\AA},\alpha =73.4°$. When
+taking smaple thickness into account the estimated parameters were $\Delta
+f_{1}=8549\text{\AA},\Delta f_{2}=8343\text{\AA},\alpha =63.3°,
+t=2017\text{\AA}$. The estimated fit resolution was $4.3\text{\AA}$ and
+$4.2\text{\AA}$ without and with sample estimation, respectively.
+](figures/node_figure.png){#fig:node width=50%}
 
 ![Validation of sample thickness
 estimation](figures/node_validation_figure.png){#fig:nodevalidationthickness width=50%}

@@ -103,12 +103,12 @@ with lp.figure(f"thickness_correction_example2",tight_layout=False):
     plt.subplots_adjust(wspace=0.15, hspace=0.05)
     
     #text_tilt = AnchoredText(
-    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_classic.transAxes, borderpad=0.0)
+    print(f"\\underline{{Parameters:}}\nDefocus 1: {int(info_tilt_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_tilt_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_tilt_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_tilt_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_tilt_ctf['TILT_ANGLE']:.1f}°\n\\underline{{Fit resolution:}} {info_tilt_ctf['DETECTED_RING_RESOLUTION']:.1f}Å") #, frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_classic.transAxes, borderpad=0.0)
     #info_tilt.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
     #ax_classic.add_artist(text_tilt)
 
     #text_refine = AnchoredText(
-    #f"\\underline{{Parameters:}}\nDefocus 1: {int(info_refine_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_refine_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_refine_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_refine_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_refine_ctf['TILT_ANGLE']:.1f}°\nSample Thickness: {int(info_refine_ctf['SAMPLE_THICKNESS'])}Å\n\\underline{{Fit resolution:}} {info_refine_ctf['DETECTED_RING_RESOLUTION']:.1f}Å", frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_refine.transAxes, borderpad=0.0)
+    print(f"\\underline{{Parameters:}}\nDefocus 1: {int(info_refine_ctf['DEFOCUS1'])}Å\nDefocus 2: {int(info_refine_ctf['DEFOCUS2'])}Å\nAstig. angle : {info_refine_ctf['DEFOCUS_ANGLE']:.1f}°\nTilt axis angle: {info_refine_ctf['TILT_AXIS']:.1f}°\nTilt angle: {info_refine_ctf['TILT_ANGLE']:.1f}°\nSample Thickness: {int(info_refine_ctf['SAMPLE_THICKNESS'])}Å\n\\underline{{Fit resolution:}} {info_refine_ctf['DETECTED_RING_RESOLUTION']:.1f}Å") #, frameon=False,loc='upper left',bbox_to_anchor=(1.05, 0.95), bbox_transform=ax_refine.transAxes, borderpad=0.0)
     #info_refine.patch.set_boxstyle("round,pad=0.,rounding_size=0.2")
     #ax_refine.add_artist(text_refine)
     # Set space between subplots
