@@ -6,6 +6,7 @@ from pathlib import Path
 import scienceplots
 from sklearn.linear_model import RANSACRegressor
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
 
 plt.style.use(['science','scatter','ieee'])
 import utils
@@ -57,9 +58,26 @@ with lp.figure(f"thickness_by_node_vs_by_lamber_beer_j12",tight_layout=False):
         outlier_mask = np.logical_not(inlier_mask)
         print(np.sum(inlier_mask))
         print(np.sum(outlier_mask))
-        print(filenames[outlier_mask])
         plt.scatter(x[inlier_mask],y[inlier_mask],s=1,alpha=1,marker='.',color='k')
-        plt.scatter(x[outlier_mask],y[outlier_mask],s=1,alpha=0.5,color='k',marker='.')
+        reasons = pd.read_csv("data/intensity_vs_node_reasons.csv",quotechar="'",header=None)
+        markers=['x','+','^','v','<','>','s','p','*','h','H','D','d','P','X']
+        colors=['r','g','b','c','m','y','k','w']
+        print(reasons.iloc[:,1].unique())
+        reason_category = {
+            'Occluded beam': [" 'Edge of lamella'"," 'Contamination'"],
+            'Low image signal': [ " 'Partial vacuum'",  " 'Vacuum'", " 'No cell'"],
+            'Carbon/Platinum': [" 'Carbon'"," 'Platinum'"],
+            'Lipid droplet': [" 'Lipid droplet'"],
+        }
+        print(reason_category)  
+        for j,reason in enumerate(reason_category.keys()):
+            rows = reasons[reasons.iloc[:,1].isin(reason_category[reason])]
+            x_points = [xp for i, xp in enumerate(x) if filenames[i] in rows.iloc[:,0].values]
+            y_points = [yp for i, yp in enumerate(y) if filenames[i] in rows.iloc[:,0].values]
+            plt.scatter(x_points,y_points,s=1,alpha=0.3,label=reason,marker=markers[j], color=colors[j])
+        plt.legend(frameon=True, labelspacing=0.2,)
+
+        #plt.scatter(x[outlier_mask],y[outlier_mask],s=1,alpha=0.5,color='k',marker='.')
         # do some predictions
         test_x = np.array([0, 300])
         predictions = y_scaler.inverse_transform(
