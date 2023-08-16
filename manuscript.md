@@ -113,7 +113,7 @@ function implemented in CTFFIND4 [@doi:10.1016/j.jsb.2015.08.008] adjusted by
 the formula described by [@pmid:26103047]
 
 $$
-CTF_{t}(\lambda,\textbf{g},\Delta f,C_{s},\Delta\varphi, \omega_{2},t) = \frac{1}{2}(1-{\rm sinc}(\xi(\lambda,\textbf{g},t))\cos(2\chi(\lambda,|\textbf{g}|,\Delta f,C_{s},\Delta\varphi,\omega_{2})))
+CTF_{t}(\lambda,\textbf{g},\Delta f,C_{s},\Delta\varphi, \omega_{2},t) = \frac{1}{2}(1-{\mathrm{sinc}}(\xi(\lambda,\textbf{g},t))\cos(2\chi(\lambda,|\textbf{g}|,\Delta f,C_{s},\Delta\varphi,\omega_{2})))
 $$ {#eq:ctft}
 
 where $\chi$ denotes the phase-shift as a function of the electron wavelength
