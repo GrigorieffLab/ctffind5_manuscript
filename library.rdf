@@ -1,0 +1,1166 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/">
+    <bib:Article rdf:about="#item_1">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0028-0836"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Murata</foaf:surname>
+                        <foaf:givenName>K.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mitsuoka</foaf:surname>
+                        <foaf:givenName>K.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hirai</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Walz</foaf:surname>
+                        <foaf:givenName>T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Agre</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Heymann</foaf:surname>
+                        <foaf:givenName>J. B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Engel</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fujiyoshi</foaf:surname>
+                        <foaf:givenName>Y.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Amino Acid Sequence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Aquaporin 1</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Aquaporins</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cell Membrane Permeability</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Crystallography</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Electrons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Models, Molecular</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Molecular Sequence Data</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Protein Conformation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Protein Folding</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Protons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Water</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Structural determinants of water permeation through aquaporin-1</dc:title>
+        <dcterms:abstract>Human red cell AQP1 is the first functionally defined member of the aquaporin family of membrane water channels. Here we describe an atomic model of AQP1 at 3.8A resolution from electron crystallographic data. Multiple highly conserved amino-acid residues stabilize the novel fold of AQP1. The aqueous pathway is lined with conserved hydrophobic residues that permit rapid water transport, whereas the water selectivity is due to a constriction of the pore diameter to about 3 A over a span of one residue. The atomic model provides a possible molecular explanation to a longstanding puzzle in physiology-how membranes can be freely permeable to water but impermeable to protons.</dcterms:abstract>
+        <dc:date>2000-10-05</dc:date>
+        <z:language>eng</z:language>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 11034202</dc:description>
+        <bib:pages>599-605</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0028-0836">
+        <prism:volume>407</prism:volume>
+        <dc:title>Nature</dc:title>
+        <dc:identifier>DOI 10.1038/35036519</dc:identifier>
+        <prism:number>6804</prism:number>
+        <dcterms:alternative>Nature</dcterms:alternative>
+        <dc:identifier>ISSN 0028-0836</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/11034202</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:21:59</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_3">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1095-8657"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rohou</foaf:surname>
+                        <foaf:givenName>Alexis</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grigorieff</foaf:surname>
+                        <foaf:givenName>Nikolaus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_5"/>
+        <link:link rdf:resource="#item_4"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Algorithms</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Astigmatism</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>CTF</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Defocus</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Image Enhancement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Imaging, Three-Dimensional</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microscopy, Electron, Transmission</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Phase plate</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>CTFFIND4: Fast and accurate defocus estimation from electron micrographs</dc:title>
+        <dcterms:abstract>CTFFIND is a widely-used program for the estimation of objective lens defocus parameters from transmission electron micrographs. Defocus parameters are estimated by fitting a model of the microscope's contrast transfer function (CTF) to an image's amplitude spectrum. Here we describe modifications to the algorithm which make it significantly faster and more suitable for use with images collected using modern technologies such as dose fractionation and phase plates. We show that this new version preserves the accuracy of the original algorithm while allowing for higher throughput. We also describe a measure of the quality of the fit as a function of spatial frequency and suggest this can be used to define the highest resolution at which CTF oscillations were successfully modeled.</dcterms:abstract>
+        <dc:date>2015-11</dc:date>
+        <z:language>eng</z:language>
+        <z:shortTitle>CTFFIND4</z:shortTitle>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 26278980
+PMCID: PMC6760662</dc:description>
+        <bib:pages>216-221</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1095-8657">
+        <prism:volume>192</prism:volume>
+        <dc:title>Journal of Structural Biology</dc:title>
+        <dc:identifier>DOI 10.1016/j.jsb.2015.08.008</dc:identifier>
+        <prism:number>2</prism:number>
+        <dcterms:alternative>J Struct Biol</dcterms:alternative>
+        <dc:identifier>ISSN 1095-8657</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_5">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Accepted Version</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://europepmc.org/articles/pmc6760662?pdf=render</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:24:54</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_4">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/26278980</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:24:50</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_6">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1879-2723"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>McMullan</foaf:surname>
+                        <foaf:givenName>G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vinothkumar</foaf:surname>
+                        <foaf:givenName>K. R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Henderson</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_7"/>
+        <link:link rdf:resource="#item_8"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Electrons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Water</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Amorphous ice</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryoelectron Microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ice</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Image Processing, Computer-Assisted</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Macromolecular Substances</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Markov Process</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Motion</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Noise whitening</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Radiation damage</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Thon rings</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Thon rings from amorphous ice and implications of beam-induced Brownian motion in single particle electron cryo-microscopy</dc:title>
+        <dcterms:abstract>We have recorded dose-fractionated electron cryo-microscope images of thin films of pure flash-frozen amorphous ice and pre-irradiated amorphous carbon on a Falcon II direct electron detector using 300 keV electrons. We observe Thon rings [1] in both the power spectrum of the summed frames and the sum of power spectra from the individual frames. The Thon rings from amorphous carbon images are always more visible in the power spectrum of the summed frames whereas those of amorphous ice are more visible in the sum of power spectra from the individual frames. This difference indicates that while pre-irradiated carbon behaves like a solid during the exposure, amorphous ice behaves like a fluid with the individual water molecules undergoing beam-induced motion. Using the measured variation in the power spectra amplitude with number of electrons per image we deduce that water molecules are randomly displaced by a mean squared distance of ∼1.1 Å(2) for every incident 300 keV e(-)/Å(2). The induced motion leads to an optimal exposure with 300 keV electrons of 4.0 e(-)/Å(2) per image with which to observe Thon rings centred around the strong 3.7 Å scattering peak from amorphous ice. The beam-induced movement of the water molecules generates pseudo-Brownian motion of embedded macromolecules. The resulting blurring of single particle images contributes an additional term, on top of that from radiation damage, to the minimum achievable B-factor for macromolecular structure determination.</dcterms:abstract>
+        <dc:date>2015-11</dc:date>
+        <z:language>eng</z:language>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 26103047
+PMCID: PMC4584428</dc:description>
+        <bib:pages>26-32</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1879-2723">
+        <prism:volume>158</prism:volume>
+        <dc:title>Ultramicroscopy</dc:title>
+        <dc:identifier>DOI 10.1016/j.ultramic.2015.05.017</dc:identifier>
+        <dcterms:alternative>Ultramicroscopy</dcterms:alternative>
+        <dc:identifier>ISSN 1879-2723</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_7">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/26103047</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:25:22</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_8">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Submitted Version</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/pdf/1504.00947</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:25:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_9">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2050-084X"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Elferich</foaf:surname>
+                        <foaf:givenName>Johannes</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schiroli</foaf:surname>
+                        <foaf:givenName>Giulia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Scadden</foaf:surname>
+                        <foaf:givenName>David T.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grigorieff</foaf:surname>
+                        <foaf:givenName>Nikolaus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_11"/>
+        <link:link rdf:resource="#item_10"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryoelectron Microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Animals</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>cell biology</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>cryo-EM</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Mammals</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Mice</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microscopy, Fluorescence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>molecular biophysics</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>mouse</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>neutrophil</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>ribosome</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ribosomes</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>structural biology</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for label-free detection of molecules across entire cell sections</dc:title>
+        <dcterms:abstract>A major goal of biological imaging is localization of biomolecules inside a cell. Fluorescence microscopy can localize biomolecules inside whole cells and tissues, but its ability to count biomolecules and accuracy of the spatial coordinates is limited by the wavelength of visible light. Cryo-electron microscopy (cryo-EM) provides highly accurate position and orientation information of biomolecules but is often confined to small fields of view inside a cell, limiting biological context. In this study, we use a new data-acquisition scheme called Defocus-Corrected Large-Area cryo-EM (DeCo-LACE) to collect high-resolution images of entire sections (100- to 250-nm-thick lamellae) of neutrophil-like mouse cells, representing 1-2% of the total cellular volume. We use 2D template matching (2DTM) to determine localization and orientation of the large ribosomal subunit in these sections. These data provide maps of ribosomes across entire sections of mammalian cells. This high-throughput cryo-EM data collection approach together with 2DTM will advance visual proteomics and provide biological insight that cannot be obtained by other methods.</dcterms:abstract>
+        <dc:date>2022-11-16</dc:date>
+        <z:language>eng</z:language>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 36382886
+PMCID: PMC9711527</dc:description>
+        <bib:pages>e80980</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2050-084X">
+        <prism:volume>11</prism:volume>
+        <dc:title>eLife</dc:title>
+        <dc:identifier>DOI 10.7554/eLife.80980</dc:identifier>
+        <dcterms:alternative>Elife</dcterms:alternative>
+        <dc:identifier>ISSN 2050-084X</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_11">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9711527/pdf/elife-80980.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:30:12</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_10">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/36382886</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:30:03</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_12">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1548-7105"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tegunov</foaf:surname>
+                        <foaf:givenName>Dimitry</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cramer</foaf:surname>
+                        <foaf:givenName>Patrick</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_14"/>
+        <link:link rdf:resource="#item_13"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryoelectron Microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Image Processing, Computer-Assisted</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Benchmarking</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Deep Learning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Real-time cryo-electron microscopy data preprocessing with Warp</dc:title>
+        <dcterms:abstract>The acquisition of cryo-electron microscopy (cryo-EM) data from biological specimens must be tightly coupled to data preprocessing to ensure the best data quality and microscope usage. Here we describe Warp, a software that automates all preprocessing steps of cryo-EM data acquisition and enables real-time evaluation. Warp corrects micrographs for global and local motion, estimates the local defocus and monitors key parameters for each recorded micrograph or tomographic tilt series in real time. The software further includes deep-learning-based models for accurate particle picking and image denoising. The output from Warp can be fed into established programs for particle classification and 3D-map refinement. Our benchmarks show improvement in the nominal resolution, which went from 3.9 Å to 3.2 Å, of a published cryo-EM data set for influenza virus hemagglutinin. Warp is easy to install from http://github.com/cramerlab/warp and computationally inexpensive, and has an intuitive, streamlined user interface.</dcterms:abstract>
+        <dc:date>2019-11</dc:date>
+        <z:language>eng</z:language>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 31591575
+PMCID: PMC6858868</dc:description>
+        <bib:pages>1146-1152</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1548-7105">
+        <prism:volume>16</prism:volume>
+        <dc:title>Nature Methods</dc:title>
+        <dc:identifier>DOI 10.1038/s41592-019-0580-y</dc:identifier>
+        <prism:number>11</prism:number>
+        <dcterms:alternative>Nat Methods</dcterms:alternative>
+        <dc:identifier>ISSN 1548-7105</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_14">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Accepted Version</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://europepmc.org/articles/pmc6858868?pdf=render</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:51:28</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_13">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/31591575</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 17:51:25</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.sciencedirect.com/science/article/pii/S1047847716301137">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1047-8477"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hagen</foaf:surname>
+                        <foaf:givenName>Wim J. H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wan</foaf:surname>
+                        <foaf:givenName>William</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Briggs</foaf:surname>
+                        <foaf:givenName>John A. G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_16"/>
+        <link:link rdf:resource="#item_17"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryo-electron microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Electron tomography</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Subtomogram averaging</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Tilt-scheme</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Implementation of a cryo-electron tomography tilt-scheme optimized for high resolution subtomogram averaging</dc:title>
+        <dcterms:abstract>Cryo-electron tomography (cryoET) allows 3D structural information to be obtained from cells and other biological samples in their close-to-native state. In combination with subtomogram averaging, detailed structures of repeating features can be resolved. CryoET data is collected as a series of images of the sample from different tilt angles; this is performed by physically rotating the sample in the microscope between each image. The angles at which the images are collected, and the order in which they are collected, together are called the tilt-scheme. Here we describe a “dose-symmetric tilt-scheme” that begins at low tilt and then alternates between increasingly positive and negative tilts. This tilt-scheme maximizes the amount of high-resolution information maintained in the tomogram for subsequent subtomogram averaging, and may also be advantageous for other applications. We describe implementation of the tilt-scheme in combination with further data-collection refinements including setting thresholds on acceptable drift and improving focus accuracy. Requirements for microscope set-up are introduced, and a macro is provided which automates the application of the tilt-scheme within SerialEM.</dcterms:abstract>
+        <dc:date>2017-02-01</dc:date>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847716301137</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 18:03:09</dcterms:dateSubmitted>
+        <bib:pages>191-198</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1047-8477">
+        <dcterms:isPartOf>
+           <bib:Series><dc:title>Electron Tomography</dc:title></bib:Series>
+        </dcterms:isPartOf>
+        <prism:volume>197</prism:volume>
+        <dc:title>Journal of Structural Biology</dc:title>
+        <dc:identifier>DOI 10.1016/j.jsb.2016.06.007</dc:identifier>
+        <prism:number>2</prism:number>
+        <dcterms:alternative>Journal of Structural Biology</dcterms:alternative>
+        <dc:identifier>ISSN 1047-8477</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_16">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>ScienceDirect Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847716301137/pdfft?md5=e7de28b0fff5797ed3938fd6c8fa57ef&amp;pid=1-s2.0-S1047847716301137-main.pdf&amp;isDTMRedir=Y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 18:03:11</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_17">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847716301137</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-08-18 18:03:15</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:BookSection rdf:about="#item_21">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+               <dc:title>Electron Microscopy in Material Science</dc:title>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Academic Press New York</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thon</foaf:surname>
+                        <foaf:givenName>F</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Phase contrast transfer function</dc:title>
+        <dc:date>1971</dc:date>
+        <bib:pages>570–625</bib:pages>
+    </bib:BookSection>
+    <bib:Article rdf:about="#item_22">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>216</prism:volume>
+                <dc:title>Ultramicroscopy</dc:title>
+                <dc:identifier>DOI 10.1016/j.ultramic.2020.113023</dc:identifier>
+                <dcterms:alternative>Ultramicroscopy</dcterms:alternative>
+                <dc:identifier>ISSN 1879-2723</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tichelaar</foaf:surname>
+                        <foaf:givenName>Willem</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hagen</foaf:surname>
+                        <foaf:givenName>Wim J. H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gorelik</foaf:surname>
+                        <foaf:givenName>Tatiana E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xue</foaf:surname>
+                        <foaf:givenName>Liang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mahamid</foaf:surname>
+                        <foaf:givenName>Julia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_23"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Thon rings</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryo-electron microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Contrast transfer</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Depth of field</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ewald sphere</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Structure determination</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>TEM bright field imaging of thick specimens: nodes in Thon ring patterns</dc:title>
+        <dcterms:abstract>The thickness of an object will, at some point, exceed the depth of field of a transmission electron microscope; the value at which this occurs, depends on the resolution and the wavelength considered. An image is then no longer a true projection of the 3D structure. This effect will be expressed in the power spectrum. Here, we first demonstrate this phenomenon experimentally, using carbon foils of different thicknesses and working at 40, 60, 80 and 300 kV. Since we determined the thicknesses of the foils by tomography, we are also able to confirm experimentally that in the case of a thick object, the Thon ring pattern can be described as the sum of the power spectra originating from thin, independently scattering slices. Thus, a sinc function envelope is observed that attenuates the Thon rings' amplitudes, yielding &quot;nodes&quot; in the pattern at which the amplitudes are zero. These nodes move to lower spatial frequencies with decreasing acceleration voltages and increasing thicknesses. Conversely, the object thickness can be directly derived from node positions at a particular acceleration voltage. We validate our approach by applying it to frozen-hydrated bacteria with experimentally determined thicknesses. Our model will contribute to more reliably determining the defocus to be used with contrast transfer function correction for thicker objects and at lower acceleration voltages.</dcterms:abstract>
+        <dc:date>2020-09</dc:date>
+        <z:language>eng</z:language>
+        <z:shortTitle>TEM bright field imaging of thick specimens</z:shortTitle>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 32559707</dc:description>
+        <bib:pages>113023</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_23">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/32559707</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-18 14:22:49</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_24">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>142</prism:volume>
+                <dc:title>Journal of Structural Biology</dc:title>
+                <dc:identifier>DOI 10.1016/s1047-8477(03)00069-8</dc:identifier>
+                <prism:number>3</prism:number>
+                <dcterms:alternative>J Struct Biol</dcterms:alternative>
+                <dc:identifier>ISSN 1047-8477</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mindell</foaf:surname>
+                        <foaf:givenName>Joseph A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grigorieff</foaf:surname>
+                        <foaf:givenName>Nikolaus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_25"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Algorithms</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Aquaporins</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Crystallography</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Image Processing, Computer-Assisted</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Microscopy, Electron</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Models, Theoretical</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Reproducibility of Results</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Accurate determination of local defocus and specimen tilt in electron microscopy</dc:title>
+        <dcterms:abstract>Accurate knowledge of defocus and tilt parameters is essential for the determination of three-dimensional protein structures at high resolution using electron microscopy. We present two computer programs, CTFFIND3 and CTFTILT, which determine defocus parameters from images of untilted specimens, as well as defocus and tilt parameters from images of tilted specimens, respectively. Both programs use a simple algorithm that fits the amplitude modulations visible in a power spectrum with a calculated contrast transfer function (CTF). The background present in the power spectrum is calculated using a low-pass filter. The background is then subtracted from the original power spectrum, allowing the fitting of only the oscillatory component of the CTF. CTFTILT determines specimen tilt parameters by measuring the defocus at a series of locations on the image while constraining them to a single plane. We tested the algorithm on images of two-dimensional crystals by comparing the results with those obtained using crystallographic methods. The images also contained contrast from carbon support film that added to the visibility of the CTF oscillations. The tests suggest that the fitting procedure is able to determine the image defocus with an error of about 10nm, whereas tilt axis and tilt angle are determined with an error of about 2 degrees and 1 degrees, respectively. Further tests were performed on images of single protein particles embedded in ice that were recorded from untilted or slightly tilted specimens. The visibility of the CTF oscillations from these images was reduced due to the lack of a carbon support film. Nevertheless, the test results suggest that the fitting procedure is able to determine image defocus and tilt angle with errors of about 100 nm and 6 degrees, respectively.</dcterms:abstract>
+        <dc:date>2003-06</dc:date>
+        <z:language>eng</z:language>
+        <z:libraryCatalog>PubMed</z:libraryCatalog>
+        <dc:description>PMID: 12781660</dc:description>
+        <bib:pages>334-347</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_25">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PubMed entry</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/12781660</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:18:47</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.sciencedirect.com/science/article/pii/S1047847709002433">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>168</prism:volume>
+                <dc:title>Journal of Structural Biology</dc:title>
+                <dc:identifier>DOI 10.1016/j.jsb.2009.08.016</dc:identifier>
+                <prism:number>3</prism:number>
+                <dcterms:alternative>Journal of Structural Biology</dcterms:alternative>
+                <dc:identifier>ISSN 1047-8477</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiong</foaf:surname>
+                        <foaf:givenName>Quanren</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Morphew</foaf:surname>
+                        <foaf:givenName>Mary K.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schwartz</foaf:surname>
+                        <foaf:givenName>Cindi L.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hoenger</foaf:surname>
+                        <foaf:givenName>Andreas H.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mastronarde</foaf:surname>
+                        <foaf:givenName>David N.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_27"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Contrast transfer function</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Cryomicroscopy</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Electron tomography</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>CTF determination and correction for low dose tomographic tilt series</dc:title>
+        <dcterms:abstract>The resolution of cryo-electron tomography can be limited by the first zero of the microscope’s contrast transfer function (CTF). To achieve higher resolution, it is critical to determine the CTF and correct its phase inversions. However, the extremely low signal-to-noise ratio (SNR) and the defocus gradient in the projections of tilted specimens make this process challenging. Two programs, CTFPLOTTER and CTFPHASEFLIP, have been developed to address these issues. CTFPLOTTER obtains a 1D power spectrum by periodogram averaging and rotational averaging and it estimates the noise background with a novel approach, which uses images taken with no specimen. The background-subtracted 1D power spectra from image regions at different defocus values are then shifted to align their first zeros and averaged together. This averaging improves the SNR sufficiently that it becomes possible to determine the defocus for subsets of the tilt series rather than just the entire series. CTFPHASEFLIP corrects images line-by-line by inverting phases appropriately in thin strips of the image at nearly constant defocus. CTF correction by these methods is shown to improve the resolution of aligned, averaged particles extracted from tomograms. However, some restoration of Fourier amplitudes at high frequencies is important for seeing the benefits from CTF correction.</dcterms:abstract>
+        <dc:date>2009-12-01</dc:date>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847709002433</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:19:46</dcterms:dateSubmitted>
+        <bib:pages>378-387</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_27">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>ScienceDirect Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847709002433/pdfft?md5=b95f1e6d904852a53e17c8ea36e58877&amp;pid=1-s2.0-S1047847709002433-main.pdf&amp;isDTMRedir=Y</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:19:50</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://www.sciencedirect.com/science/article/pii/S1047847718303125">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>205</prism:volume>
+                <dc:title>Journal of Structural Biology</dc:title>
+                <dc:identifier>DOI 10.1016/j.jsb.2018.11.012</dc:identifier>
+                <prism:number>1</prism:number>
+                <dcterms:alternative>Journal of Structural Biology</dcterms:alternative>
+                <dc:identifier>ISSN 1047-8477</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Su</foaf:surname>
+                        <foaf:givenName>Min</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_30"/>
+        <link:link rdf:resource="#item_29"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Contrast transfer function</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cryo-electron microscopy</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Focus gradient</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Local focus refinement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>goCTF: Geometrically optimized CTF determination for single-particle cryo-EM</dc:title>
+        <dcterms:abstract>Preferred particle orientation represents a recurring problem in single-particle cryogenic electron microcopy (cryo-EM). A specimen-independent approach through tilting has been attempted to increase particle orientation coverage, thus minimizing anisotropic three-dimensional (3D) reconstruction. However, focus gradient is a critical issue hindering tilt applications from being a general practice in single-particle cryo-EM. The present study describes a newly developed geometrically optimized approach, goCTF, to reliably determine the global focus gradient. A novel strategy of determining contrast transfer function (CTF) parameters from a sector of the signal preserved power spectrum is applied to increase reliability. Subsequently, per-particle based local focus refinement is conducted in an iterative manner to further improve the defocus accuracy. Novel diagnosis methods using a standard deviation defocus plot and goodness of fit heatmap have also been proposed to evaluate CTF fitting quality prior to 3D refinement. In a benchmark study, goCTF processed a published single-particle cryo-EM dataset for influenza hemagglutinin trimer collected at a 40-degree specimen tilt. The resulting 3D reconstruction map was improved from 4.1 Å to 3.7 Å resolution. The goCTF program is built on the open-source code of CTFFIND4, which adopts a consistent user interface for ease of use.</dcterms:abstract>
+        <dc:date>2019-01-01</dc:date>
+        <z:shortTitle>goCTF</z:shortTitle>
+        <z:libraryCatalog>ScienceDirect</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847718303125</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:21:23</dcterms:dateSubmitted>
+        <bib:pages>22-29</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_30">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Accepted Version</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://europepmc.org/articles/pmc6692911?pdf=render</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:21:41</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_29">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>ScienceDirect Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.sciencedirect.com/science/article/pii/S1047847718303125</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:21:31</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://www.biorxiv.org/content/10.1101/338558v1">
+        <z:itemType>preprint</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>bioRxiv</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tegunov</foaf:surname>
+                        <foaf:givenName>Dimitry</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cramer</foaf:surname>
+                        <foaf:givenName>Patrick</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_32"/>
+        <dc:title>Real-time cryo-EM data pre-processing with Warp</dc:title>
+        <dcterms:abstract>The acquisition of cryo-electron microscopy (cryo-EM) data from biological specimens is currently largely uncoupled from subsequent data evaluation, correction and processing. Therefore, the acquisition strategy is difficult to optimize during data collection, often leading to suboptimal microscope usage and disappointing results. Here we provide Warp, a software for real-time evaluation, correction, and processing of cryo-EM data during their acquisition. Warp evaluates and monitors key parameters for each recorded micrograph or tomographic tilt series in real time. Warp also rapidly corrects micrographs for global and local motion, and estimates the local defocus with the use of novel algorithms. The software further includes a deep learning-based particle picking algorithm that rivals human accuracy to make the pre-processing pipeline truly automated. The output from Warp can be directly fed into established tools for particle classification and 3D image reconstruction. In a benchmarking study we show that Warp automatically processed a published cryo-EM data set for influenza virus hemagglutinin, leading to an improvement of the nominal resolution from 3.9 Å to 3.2 Å. Warp is easy to install, computationally inexpensive, and has an intuitive and streamlined user interface.</dcterms:abstract>
+        <dc:date>2018-06-14</dc:date>
+        <z:language>en</z:language>
+        <z:libraryCatalog>bioRxiv</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.biorxiv.org/content/10.1101/338558v1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:22:10</dcterms:dateSubmitted>
+        <dc:rights>© 2018, Posted by Cold Spring Harbor Laboratory. The copyright holder for this pre-print is the author. All rights reserved. The material may not be redistributed, re-used or adapted without the author's permission.</dc:rights>
+        <dc:description>Pages: 338558
+Section: New Results</dc:description>
+        <dc:identifier>DOI 10.1101/338558</dc:identifier>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_32">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.biorxiv.org/content/biorxiv/early/2018/06/14/338558.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2023-09-19 18:22:20</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_34">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>12</prism:volume>
+                <dc:title>Journal of Machine Learning Research</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pedregosa</foaf:surname>
+                        <foaf:givenName>F.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Varoquaux</foaf:surname>
+                        <foaf:givenName>G.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gramfort</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Michel</foaf:surname>
+                        <foaf:givenName>V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Thirion</foaf:surname>
+                        <foaf:givenName>B.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Grisel</foaf:surname>
+                        <foaf:givenName>O.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Blondel</foaf:surname>
+                        <foaf:givenName>M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prettenhofer</foaf:surname>
+                        <foaf:givenName>P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Weiss</foaf:surname>
+                        <foaf:givenName>R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dubourg</foaf:surname>
+                        <foaf:givenName>V.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vanderplas</foaf:surname>
+                        <foaf:givenName>J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Passos</foaf:surname>
+                        <foaf:givenName>A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cournapeau</foaf:surname>
+                        <foaf:givenName>D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Brucher</foaf:surname>
+                        <foaf:givenName>M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Perrot</foaf:surname>
+                        <foaf:givenName>M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Duchesnay</foaf:surname>
+                        <foaf:givenName>E.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:title>Scikit-learn: Machine Learning in Python</dc:title>
+        <dc:date>2011</dc:date>
+        <bib:pages>2825–2830</bib:pages>
+    </bib:Article>
+</rdf:RDF>
