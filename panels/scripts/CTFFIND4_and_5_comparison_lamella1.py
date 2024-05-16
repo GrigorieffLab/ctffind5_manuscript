@@ -69,7 +69,7 @@ plt.style.use(['science','scatter','ieee'])
 with lp.figure(f"ctftilt_lamella1_JE_cppresult_withdefocus",tight_layout=False):
     # genrate two plots, One for fitted alues one for errors. Te error plot should be below and have 1/4 of the height. The figure should be 8.85 cm wide.
      
-    plt,(ax_tilt, ax_axis_angle, ax_error,ax_defocus,ax_fitreso) = plt.subplots(5,1,figsize=(3.5,5),sharex=True,gridspec_kw={'height_ratios':[2,2,1,2,1]})  
+    plt,(ax_tilt, ax_axis_angle, ax_error,ax_defocus,ax_fitreso) = plt.subplots(5,1,figsize=(3.5,5),sharex=True,gridspec_kw={'height_ratios':[2,2,1,2,2]})  
     ctffind5_data = ctffind5_info
     outlier_mask = np.in1d(range(ctffind5_data.shape[0]), outliers)
     no_outlier_mask = np.invert(outlier_mask)
@@ -96,7 +96,6 @@ with lp.figure(f"ctftilt_lamella1_JE_cppresult_withdefocus",tight_layout=False):
     ax_fitreso.plot(rawtlt,ctffind5_fitreso,linestyle='--',marker='o',fillstyle='none',color='k')
 
 
-
     # ax_error.hlines(0,tem_info[0,2],tem_info[-1,2],'k',linestyles='-')
     # ax_error.scatter(rawtlt[no_outlier_mask],abs_error[:,1][no_outlier_mask],marker='o')
     # ax_error.scatter(rawtlt[no_outlier_mask],abs_error[:,2][no_outlier_mask],marker='x',color='k') 
@@ -105,12 +104,31 @@ with lp.figure(f"ctftilt_lamella1_JE_cppresult_withdefocus",tight_layout=False):
 
 
     plt.subplots_adjust(hspace=0.05)
-    ax_tilt.set_ylabel('Tilt angle (°)')
-    ax_axis_angle.set_ylabel('Tilt axis angle (°)')
-    ax_error.set_ylabel('Error (°)')
+
     # ax_error.set_xlabel('Nominal stage tilt angle (°)')
+    
+    # ax_defocus.set_ylabel('Defocus (µm)')
+    # ax_fitreso.set_ylabel('Fit resolution (Å)')
+
+    # current_values = ax_tilt.get_yticks()
+    # ax_tilt.set_yticklabels(['{:,.1f}'.format(x) for x in current_values])
+    ax_tilt.set_ylabel('Tilt angle (°)', labelpad=10)
+
+    # current_values = ax_axis_angle.get_yticks()
+    # ax_axis_angle.set_yticklabels(['{:,.1f}'.format(x) for x in current_values])
+    ax_axis_angle.set_ylabel('Tilt axis angle (°)', labelpad=6)
+    
+    ax_error.set_ylabel('Error (°)', labelpad=4)
     ax_error.set_ylim(-13,13)
-    ax_defocus.set_ylabel('Defocus (µm)')
-    ax_fitreso.set_ylabel('Fit resolution (Å)')
+    
+    current_values = ax_defocus.get_yticks()
+    ax_defocus.set_yticklabels(['{:,.1f}'.format(x) for x in current_values])
+    ax_defocus.set_ylabel('Defocus (µm)', labelpad=8)
+
+    # current_values = ax_fitreso.get_yticks()
+    # ax_fitreso.set_yticklabels(['{:,.1f}'.format(x) for x in current_values])
+    ax_fitreso.set_ylabel('Fit resolution (Å)', labelpad=10)
     ax_fitreso.set_xlabel('Nominal stage tilt angle (°)')
+
+    
 # %%
